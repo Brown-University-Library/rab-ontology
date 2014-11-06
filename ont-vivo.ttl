@@ -223,7 +223,6 @@ vivo:URLLink
 vivo:Course
       a       owl:Class ;
       rdfs:label "Course"@en-US ;
-      rdfs:subClassOf event:Event ;
       vitro:descriptionAnnot
               "A course as taught in one time period (such as a semester; although note that a course could consist of only one meeting (teaching session)) by one or more instructors, normally but not always for credit. Does not represent either each meeting of the course or the course offering such as Biology 101 taught every semester from 1980 to 2010"^^xsd:string ;
       vitro:displayLimitAnnot
@@ -321,7 +320,6 @@ vivo:middleName
 vivo:primaryEmail
       a       owl:DatatypeProperty ;
       rdfs:label "primary email"@en-US ;
-      rdfs:subPropertyOf vivo:email ;
       vitro:displayLimitAnnot
               "1"^^xsd:int ;
       vitro:displayRankAnnot
@@ -431,7 +429,6 @@ vivo:hasCollaborator
 vivo:hasResearchArea
       a       owl:ObjectProperty ;
       rdfs:label "research areas"@en-US ;
-      rdfs:subPropertyOf vivo:hasAssociatedConcept ;
       vitro:customEntryFormAnnot
               "edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.AddAssociatedConceptGenerator"^^xsd:string ;
       vitro:displayLimitAnnot
@@ -453,7 +450,6 @@ vivo:hasResearchArea
 vivo:researchAreaOf
       a       owl:ObjectProperty ;
       rdfs:label "research area of"@en-US ;
-      rdfs:subPropertyOf vivo:conceptAssociatedWith ;
       vitro:displayLimitAnnot
               "5"^^xsd:int ;
       vitro:displayRankAnnot
@@ -867,7 +863,6 @@ vivo:hasSubOrganization
       rdfs:domain foaf:Organization ;
       rdfs:label "has sub-organization"@en-US ;
       rdfs:range foaf:Organization ;
-      rdfs:subPropertyOf vivo:hasPart ;
       vitro:collateBySubclassAnnot
               "true"^^xsd:boolean ;
       vitro:displayLimitAnnot
@@ -895,7 +890,6 @@ vivo:hasSubOrganization
       rdfs:domain foaf:Organization ;
       rdfs:label "has sub-organization"@en-US ;
       rdfs:range foaf:Organization ;
-      rdfs:subPropertyOf vivo:hasPart ;
       vitro:collateBySubclassAnnot
               "true"^^xsd:boolean ;
       vitro:displayLimitAnnot
