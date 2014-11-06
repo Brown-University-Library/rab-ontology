@@ -47,41 +47,6 @@ foaf:
 foaf:Agent
       a       owl:Class ;
       rdfs:label "Agent"@en-US ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom rdfs:Literal ;
-                owl:onProperty vivo:primaryEmail
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:InformationResource ;
-                owl:onProperty vivo:featuredIn
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:Address ;
-                owl:onProperty vivo:mailingAddress
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom rdfs:Literal ;
-                owl:onProperty vivo:email
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:Authorship ;
-                owl:onProperty vivo:authorInAuthorship
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:URLLink ;
-                owl:onProperty vivo:webpage
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom rdfs:Literal ;
-                owl:onProperty vivo:freetextKeyword
-              ] ;
       vitro:descriptionAnnot
               "see: http://xmlns.com/foaf/spec/#term_Agent"^^xsd:string ;
       vitro:displayLimitAnnot
@@ -100,46 +65,6 @@ foaf:Person
       a       owl:Class ;
       rdfs:label "Person"@en-US ;
       rdfs:subClassOf foaf:Agent ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:GeographicRegion ;
-                owl:onProperty vivo:geographicFocus
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom owl:Thing ;
-                owl:onProperty vivo:hasResearchArea
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:Credential ;
-                owl:onProperty vivo:eligibleFor
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:AwardReceipt ;
-                owl:onProperty vivo:awardOrHonor
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:GeographicRegion ;
-                owl:onProperty vivo:internationalGeographicFocus
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom foaf:Person ;
-                owl:onProperty vivo:hasCollaborator
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:GeographicRegion ;
-                owl:onProperty vivo:domesticGeographicFocus
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom foaf:Organization ;
-                owl:onProperty vivo:currentMemberOf
-              ] ;
       vitro:customDisplayViewAnnot
               "individual--foaf-person.ftl"^^xsd:string ;
       vitro:displayLimitAnnot
@@ -157,36 +82,6 @@ foaf:Organization
       a       owl:Class ;
       rdfs:label "Organization"@en-US ;
       rdfs:subClassOf foaf:Agent ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom foaf:Agent ;
-                owl:onProperty vivo:hasCurrentMember
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom foaf:Organization ;
-                owl:onProperty vivo:hasSubOrganization
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:DateTimeInterval ;
-                owl:onProperty vivo:dateTimeInterval
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:Role ;
-                owl:onProperty vivo:contributingRole
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom rdfs:Literal ;
-                owl:onProperty vivo:abbreviation
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:GeographicLocation ;
-                owl:onProperty vivo:hasGeographicLocation
-              ] ;
       vitro:customDisplayViewAnnot
               "individual--foaf-organization.ftl"^^xsd:string ;
       vitro:descriptionAnnot

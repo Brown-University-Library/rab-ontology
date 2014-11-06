@@ -66,11 +66,6 @@ vivo:University
       a       owl:Class ;
       rdfs:label "University"@en-US ;
       rdfs:subClassOf foaf:Organization ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:AcademicDegree ;
-                owl:onProperty vivo:offersDegree
-              ] ;
       vitro:descriptionAnnot
               "Definition taken from: http://en.wikipedia.org/wiki/University"^^xsd:string ;
       vitro:displayLimitAnnot
@@ -89,11 +84,6 @@ vivo:Division
       a       owl:Class ;
       rdfs:label "Division"@en-US ;
       rdfs:subClassOf foaf:Organization ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:Grant ;
-                owl:onProperty vivo:administers
-              ] ;
       vitro:descriptionAnnot
               "Definition modified from http://www.thefreedictionary.com/division.  It is difficult to tell the difference between a division and a department."^^xsd:string ;
       vitro:displayLimitAnnot
@@ -112,11 +102,6 @@ vivo:Department
       a       owl:Class ;
       rdfs:label "Department"@en-US ;
       rdfs:subClassOf foaf:Organization ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:Grant ;
-                owl:onProperty vivo:administers
-              ] ;
       vitro:descriptionAnnot
               "Definition modified from the definition here: http://dictionary.reference.com/browse/department. It is difficult to tell the difference between and department and a division."^^xsd:string ;
       vitro:displayLimitAnnot
@@ -135,16 +120,6 @@ vivo:AcademicDepartment
       a       owl:Class ;
       rdfs:label "Academic Department"@en-US ;
       rdfs:subClassOf vivo:Department ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:AcademicDegree ;
-                owl:onProperty vivo:offersDegree
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:Course ;
-                owl:onProperty vivo:offersCourse
-              ] ;
       vitro:displayLimitAnnot
               "-1"^^xsd:int ;
       vitro:displayRankAnnot
@@ -160,21 +135,6 @@ vivo:AcademicDepartment
 vivo:Position
       a       owl:Class ;
       rdfs:label "Position"@en-US ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:DateTimeInterval ;
-                owl:onProperty vivo:dateTimeInterval
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom rdfs:Literal ;
-                owl:onProperty vivo:email
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom xsd:int ;
-                owl:onProperty vivo:rank
-              ] ;
       vitro:descriptionAnnot
               "An employment activity, whether compensated or not. Short definition comes from http://en.wikipedia.org/wiki/Position, and has been modified."^^xsd:string ;
       vitro:displayLimitAnnot
@@ -194,16 +154,6 @@ vivo:FacultyPosition
       a       owl:Class ;
       rdfs:label "Faculty Position"@en-US ;
       rdfs:subClassOf vivo:Position ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:FacultyMember ;
-                owl:onProperty vivo:positionForPerson
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom foaf:Organization ;
-                owl:onProperty vivo:positionInOrganization
-              ] ;
       vitro:descriptionAnnot
               "Professor, associate professor and assistant professor are common positions for academic faculty."^^xsd:string ;
       vitro:displayLimitAnnot
@@ -223,16 +173,6 @@ vivo:FacultyAdministrativePosition
       a       owl:Class ;
       rdfs:label "Faculty Administrative Position"@en-US ;
       rdfs:subClassOf vivo:Position ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:FacultyMember ;
-                owl:onProperty vivo:positionForPerson
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom foaf:Organization ;
-                owl:onProperty vivo:positionInOrganization
-              ] ;
       vitro:descriptionAnnot
               "That is a position held by an academic faculty member who works for administration."^^xsd:string ;
       vitro:displayLimitAnnot
@@ -251,16 +191,6 @@ vivo:FacultyAdministrativePosition
 vivo:EducationalTraining
       a       owl:Class ;
       rdfs:label "Educational Training"@en-US ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom xsd:string ;
-                owl:onProperty vivo:supplementalInformation
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom vivo:DateTimeInterval ;
-                owl:onProperty vivo:dateTimeInterval
-              ] ;
       vitro:descriptionAnnot
               "This connects person to their academic degree through this educational training, but can also be used when the training does not result in a degree."^^xsd:string ;
       vitro:displayLimitAnnot
@@ -277,16 +207,6 @@ vivo:EducationalTraining
 vivo:URLLink
       a       owl:Class ;
       rdfs:label "URLLink"@en-US ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom xsd:int ;
-                owl:onProperty vivo:rank
-              ] ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:minCardinality "1"^^xsd:int ;
-                owl:onProperty vivo:linkURI
-              ] ;
       vitro:descriptionAnnot
               "The full URL."^^xsd:string ;
       vitro:displayLimitAnnot
@@ -304,11 +224,6 @@ vivo:Course
       a       owl:Class ;
       rdfs:label "Course"@en-US ;
       rdfs:subClassOf event:Event ;
-      rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom rdfs:Literal ;
-                owl:onProperty vivo:courseCredits
-              ] ;
       vitro:descriptionAnnot
               "A course as taught in one time period (such as a semester; although note that a course could consist of only one meeting (teaching session)) by one or more instructors, normally but not always for credit. Does not represent either each meeting of the course or the course offering such as Biology 101 taught every semester from 1980 to 2010"^^xsd:string ;
       vitro:displayLimitAnnot
