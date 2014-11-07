@@ -41,7 +41,7 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix ero:     <http://purl.obolibrary.org/obo/> .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupaffiliation>
+d:vitroPropertyGroupaffiliation
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "affiliation"@en-US ;
       vitro:displayRank "22"^^xsd:int ;
@@ -51,7 +51,7 @@
       vitro:publicDescriptionAnnot
               "Affiliations and other informal associations between people and organizations"^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupidentifiers>
+d:vitroPropertyGroupidentifiers
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "identity"@en-US ;
       vitro:displayRank "200"^^xsd:int ;
@@ -61,7 +61,7 @@
       vitro:publicDescriptionAnnot
               "properties holding unique and non-unique identifiers, names, and other identification information"^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupaddress>
+d:vitroPropertyGroupaddress
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "contact"@en-US ;
       vitro:displayRank "120"^^xsd:int ;
@@ -71,7 +71,7 @@
       vitro:publicDescriptionAnnot
               "properties related to postal and email addresses"^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGrouplinks>
+d:vitroPropertyGrouplinks
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "links"@en-US ;
       vitro:displayRank "99"^^xsd:int ;
@@ -81,7 +81,7 @@
       vitro:publicDescriptionAnnot
               "link relationships"^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupbibliographic>
+d:vitroPropertyGroupbibliographic
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "publications"@en-US ;
       vitro:displayRank "18"^^xsd:int ;
@@ -91,7 +91,7 @@
       vitro:publicDescriptionAnnot
               "primary bibliographic properties of publications to prioritize in display"^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupteaching>
+d:vitroPropertyGroupteaching
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "teaching"@en-US ;
       vitro:displayRank "35"^^xsd:int ;
@@ -99,7 +99,7 @@
       vitro:mostSpecificType
               vitro:PropertyGroup .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupresearch>
+d:vitroPropertyGroupresearch
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "research"@en-US ;
       vitro:displayRank "19"^^xsd:int ;
@@ -107,7 +107,7 @@
       vitro:mostSpecificType
               vitro:PropertyGroup .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupoutreach>
+d:vitroPropertyGroupoutreach
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "service"@en-US ;
       vitro:displayRank "70"^^xsd:int ;
@@ -115,7 +115,7 @@
       vitro:mostSpecificType
               vitro:PropertyGroup .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupoverview>
+d:vitroPropertyGroupoverview
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "overview"@en-US ;
       vitro:displayRank "10"^^xsd:int ;
@@ -123,7 +123,7 @@
       vitro:mostSpecificType
               vitro:PropertyGroup .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupbibliographiconline>
+d:vitroPropertyGroupbibliographiconline
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "related documents"@en-US ;
       vitro:displayRank "190"^^xsd:int ;
@@ -133,7 +133,7 @@
       vitro:publicDescriptionAnnot
               "reference information to online content, translations, etc."^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupbiography>
+d:vitroPropertyGroupbiography
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "background"@en-US ;
       vitro:displayRank "20"^^xsd:int ;
@@ -143,7 +143,7 @@
       vitro:publicDescriptionAnnot
               "biographical information about a person, past or present"^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupbibmapping>
+d:vitroPropertyGroupbibmapping
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "bib mapping"@en-US ;
       vitro:displayRank "2033"^^xsd:int ;
@@ -153,7 +153,7 @@
       vitro:publicDescriptionAnnot
               "Bibliographic properties in other namespaces mapped within VIVO core"^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupmapping>
+d:vitroPropertyGroupmapping
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "mapping"@en-US ;
       vitro:displayRank "2034"^^xsd:int ;
@@ -163,7 +163,7 @@
       vitro:publicDescriptionAnnot
               "Properties included in VIVO core to support mappings to other ontologies"^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGrouptime>
+d:vitroPropertyGrouptime
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "time"@en-US ;
       vitro:displayRank "195"^^xsd:int ;
@@ -173,7 +173,7 @@
       vitro:publicDescriptionAnnot
               "Dates and times for events, employment, etc."^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGroupbibobscure>
+d:vitroPropertyGroupbibobscure
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "additional document info"@en-US ;
       vitro:displayRank "2032"^^xsd:int ;
@@ -183,7 +183,7 @@
       vitro:publicDescriptionAnnot
               "obscure bibontology properties not likely to be used in VIVO"^^xsd:string .
 
-<http://vivoweb.org/ontology#vitroPropertyGrouplocation>
+d:vitroPropertyGrouplocation
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "location"@en-US ;
       vitro:displayRank "96"^^xsd:int ;
@@ -193,7 +193,7 @@
       vitro:publicDescriptionAnnot
               "Relationships of place"^^xsd:string .
 
-<http://vitro.mannlib.cornell.edu/ns/default#n5990>
+d:vitroPropertyGroupCitationInformation
       a       owl:Thing , vitro:PropertyGroup ;
       rdfs:label "citation information"@en-US ;
       vitro:displayRank "11"^^xsd:int ;

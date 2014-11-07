@@ -41,7 +41,7 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix ero:     <http://purl.obolibrary.org/obo/> .
 
-<http://vivoweb.org/ontology#vitroClassGrouppublications>
+d:vitroClassGrouppublications
       a       owl:Thing , vitro:ClassGroup ;
       rdfs:label "research"@en-US ;
       vitro:displayRank "8"^^xsd:int ;
@@ -49,7 +49,7 @@
       vitro:mostSpecificType
               vitro:ClassGroup .
 
-<http://vivoweb.org/ontology#vitroClassGroupactivities>
+d:vitroClassGroupactivities
       a       owl:Thing , vitro:ClassGroup ;
       rdfs:label "activities"@en-US ;
       vitro:displayRank "2"^^xsd:int ;
@@ -57,7 +57,7 @@
       vitro:mostSpecificType
               vitro:ClassGroup .
 
-<http://vivoweb.org/ontology#vitroClassGrouporganizations>
+d:vitroClassGrouporganizations
       a       owl:Thing , vitro:ClassGroup ;
       rdfs:label "organizations"@en-US ;
       vitro:displayRank "5"^^xsd:int ;
@@ -65,7 +65,7 @@
       vitro:mostSpecificType
               vitro:ClassGroup .
 
-<http://vivoweb.org/ontology#vitroClassGroupcourses>
+d:vitroClassGroupcourses
       a       owl:Thing , vitro:ClassGroup ;
       rdfs:label "courses"@en-US ;
       vitro:displayRank "3"^^xsd:int ;
@@ -81,7 +81,7 @@ d:vitroClassGroupcitations
       vitro:mostSpecificType
               vitro:ClassGroup .
 
-<http://vivoweb.org/ontology#vitroClassGroupequipment>
+d:vitroClassGroupequipment
       a       owl:Thing , vitro:ClassGroup ;
       rdfs:label "equipment"@en-US ;
       vitro:displayRank "7"^^xsd:int ;
@@ -89,7 +89,7 @@ d:vitroClassGroupcitations
       vitro:mostSpecificType
               vitro:ClassGroup .
 
-<http://vivoweb.org/ontology#vitroClassGroupevents>
+d:vitroClassGroupevents
       a       owl:Thing , vitro:ClassGroup ;
       rdfs:label "events"@en-US ;
       vitro:displayRank "4"^^xsd:int ;
@@ -97,7 +97,7 @@ d:vitroClassGroupcitations
       vitro:mostSpecificType
               vitro:ClassGroup .
 
-<http://vivoweb.org/ontology#vitroClassGrouplocations>
+d:vitroClassGrouplocations>
       a       owl:Thing , vitro:ClassGroup ;
       rdfs:label "locations"@en-US ;
       vitro:displayRank "11"^^xsd:int ;
@@ -113,7 +113,7 @@ d:vitroClassGroupBrownOUs
       vitro:mostSpecificType
               vitro:ClassGroup .
 
-<http://vivoweb.org/ontology#vitroClassGrouppeople>
+d:vitroClassGrouppeople
       a       owl:Thing , vitro:ClassGroup ;
       rdfs:label "people"@en-US ;
       vitro:displayRank "1"^^xsd:int ;
