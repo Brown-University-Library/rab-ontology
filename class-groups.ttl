@@ -97,7 +97,7 @@ d:vitroClassGroupevents
       vitro:mostSpecificType
               vitro:ClassGroup .
 
-d:vitroClassGrouplocations>
+d:vitroClassGrouplocations
       a       owl:Thing , vitro:ClassGroup ;
       rdfs:label "locations"@en-US ;
       vitro:displayRank "11"^^xsd:int ;
