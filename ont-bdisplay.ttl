@@ -27,6 +27,7 @@
 @prefix blocal:  <http://vivo.brown.edu/ontology/vivo-brown/> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix ero:     <http://purl.obolibrary.org/obo/> .
+@prefix brown:   <http://vivo.brown.edu/individual/> .
 
 ###############################################
 ###############################################
@@ -50,7 +51,7 @@ bdisplay:AlpertSchoolOfMedicine
       rdfs:subClassOf bdisplay:OU ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
-      vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+      vitro:inClassGroup brown:vitroClassGroupBrownOUs ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
@@ -60,7 +61,7 @@ bdisplay:SchoolOfPublicHealth
       rdfs:subClassOf bdisplay:OU ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-      vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+      vitro:inClassGroup brown:vitroClassGroupBrownOUs ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
@@ -75,7 +76,7 @@ bdisplay:OU
               "-1"^^xsd:int ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-      vitro:inClassGroup <http://vivoweb.org/ontology#vitroClassGroupBrownOUs> ;
+      vitro:inClassGroup brown:vitroClassGroupBrownOUs ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
@@ -87,7 +88,7 @@ bdisplay:Schools
               "4"^^xsd:int ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-      vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+      vitro:inClassGroup brown:vitroClassGroupBrownOUs ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
@@ -99,7 +100,7 @@ bdisplay:CentersProgramsAndInstitutes
               "2"^^xsd:int ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-      vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+      vitro:inClassGroup brown:vitroClassGroupBrownOUs ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
@@ -111,7 +112,7 @@ bdisplay:Departments
               "1"^^xsd:int ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-      vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+      vitro:inClassGroup brown:vitroClassGroupBrownOUs ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
@@ -121,7 +122,7 @@ bdisplay:SchoolOfEngineering
       rdfs:subClassOf bdisplay:OU ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-      vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+      vitro:inClassGroup brown:vitroClassGroupBrownOUs ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
@@ -133,7 +134,7 @@ bdisplay:BiologyAndMedicine
               "3"^^xsd:int ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
-      vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+      vitro:inClassGroup brown:vitroClassGroupBrownOUs ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> .
 

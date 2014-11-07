@@ -27,6 +27,7 @@
 @prefix blocal:  <http://vivo.brown.edu/ontology/vivo-brown/> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix ero:     <http://purl.obolibrary.org/obo/> .
+@prefix brown:   <http://vivo.brown.edu/individual/> .
 
 ###############################################
 ###############################################
@@ -73,7 +74,7 @@ foaf:Person
               "-1"^^xsd:int ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-      vitro:inClassGroup <http://vivoweb.org/ontology#vitroClassGrouppeople> ;
+      vitro:inClassGroup brown:vitroClassGrouppeople ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
       vitro:shortDef "The most general classification of a person"^^xsd:string .
@@ -93,7 +94,7 @@ foaf:Organization
       vitro:exampleAnnot "Only use if no specific subclasses of foaf:organization desribe the organization."^^xsd:string ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-      vitro:inClassGroup <http://vivoweb.org/ontology#vitroClassGrouporganizations> ;
+      vitro:inClassGroup brown:vitroClassGrouporganizations ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
       vitro:shortDef "A generic class encompassing several types of organizations."^^xsd:string ;
@@ -117,7 +118,7 @@ foaf:firstName
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
       vitro:inPropertyGroupAnnot
-              <http://vivoweb.org/ontology#vitroPropertyGroupaddress> ;
+              brown:vitroPropertyGroupaddress ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#editor> ;
       vitro:publicDescriptionAnnot
@@ -136,7 +137,7 @@ foaf:lastName
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
       vitro:inPropertyGroupAnnot
-              <http://vivoweb.org/ontology#vitroPropertyGroupaddress> ;
+              brown:vitroPropertyGroupaddress ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#editor> ;
       vitro:publicDescriptionAnnot

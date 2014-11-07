@@ -27,6 +27,7 @@
 @prefix blocal:  <http://vivo.brown.edu/ontology/vivo-brown/> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix ero:     <http://purl.obolibrary.org/obo/> .
+@prefix brown:   <http://vivo.brown.edu/individual/> .
 
 ###############################################
 ###############################################
@@ -54,7 +55,7 @@ skos:Concept
               "35"^^xsd:int ;
       vitro:hiddenFromDisplayBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-      vitro:inClassGroup <http://vivoweb.org/ontology#vitroClassGrouppublications> ;
+      vitro:inClassGroup brown:vitroClassGrouppublications ;
       vitro:prohibitedFromUpdateBelowRoleLevelAnnot
               <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
       vitro:shortDef "An idea or notion; a unit of thought."^^xsd:string .
