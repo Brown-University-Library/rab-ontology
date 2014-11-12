@@ -124,6 +124,20 @@ blocal:Place
       rdfs:subClassOf skos:Concept ;
       vitro:inClassGroup brown:vitroClassGrouplocations .
 
+blocal:BrownThing
+      a       owl:Class ;
+      rdfs:label "Organization or Person at Brown"@en-US ;
+      vitro:descriptionAnnot
+              "Used for restricting people, organizations, etc to Brown.  "^^xsd:string ;
+      vitro:exampleAnnot "Any Thing related to Brown"^^xsd:string ;
+      vitro:hiddenFromDisplayBelowRoleLevelAnnot
+              <http://vitro.mannlib.cornell.edu/ns/vitro/role#curator> ;
+      vitro:isMenuPageIntersectionClass
+              "true" ;
+      vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+              <http://vitro.mannlib.cornell.edu/ns/vitro/role#curator> ;
+      vitro:shortDef "Generic Brown Thing"^^xsd:string .
+
 ###############################################
 ##########        PROPERTIES!        ##########
 ###############################################
