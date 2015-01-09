@@ -1,1 +1,5 @@
-A repo holding the local ontology files needed for migrating from VIVO 1.5 to Vitro 1.7 
+
+###rab-vitro-ontologies
+
+A repository of ontologies used in (Researchers@Brown](https://vivo.brown.edu/).  
+
