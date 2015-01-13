@@ -182,7 +182,6 @@ vivo:subOrganizationWithin
       rdfs:domain foaf:Organization ;
       rdfs:label "organization within"@en-US ;
       rdfs:range foaf:Organization ;
-      rdfs:subPropertyOf vivo:partOf ;
       vitro:displayLimitAnnot
               "5"^^xsd:int ;
       vitro:displayRankAnnot
