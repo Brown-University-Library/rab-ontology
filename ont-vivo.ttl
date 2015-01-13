@@ -177,6 +177,32 @@ vivo:hasSubOrganization a owl:ObjectProperty,
     rdfs:range foaf:Organization ;
     owl:inverseOf vivo:subOrganizationWithin .
 
+vivo:subOrganizationWithin
+      a       owl:TransitiveProperty , owl:ObjectProperty ;
+      rdfs:domain foaf:Organization ;
+      rdfs:label "organization within"@en-US ;
+      rdfs:range foaf:Organization ;
+      rdfs:subPropertyOf vivo:partOf ;
+      vitro:displayLimitAnnot
+              "5"^^xsd:int ;
+      vitro:displayRankAnnot
+              "16"^^xsd:int ;
+      vitro:fullPropertyNameAnnot
+              "subOrganizationWithin"^^xsd:string ;
+      vitro:hiddenFromDisplayBelowRoleLevelAnnot
+              vitrorole:public ;
+      vitro:inPropertyGroupAnnot
+              d:vitroPropertyGroupaffiliation ;
+      vitro:offerCreateNewOptionAnnot
+              true ;
+      vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+              vitrorole:public ;
+      vitro:publicDescriptionAnnot
+              "Relates an sub-organization to the organization that contains it."^^xsd:string ;
+      vitro:selectFromExistingAnnot
+              true ;
+      owl:inverseOf vivo:hasSubOrganization 
+
 vivo:linkAnchorText a owl:DatatypeProperty ;
     rdfs:label "link anchor text"@en-US ;
     vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
