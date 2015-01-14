@@ -351,6 +351,7 @@ bcite:Publisher a owl:Class ;
     rdfs:label "Publisher"^^xsd:string .
 
 bcite:Venue a owl:Class ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
     rdfs:label "Venue"^^xsd:string .
 
 bcite:Contributor a owl:Class ;
