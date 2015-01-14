@@ -200,7 +200,7 @@ vivo:subOrganizationWithin
               "Relates an sub-organization to the organization that contains it."^^xsd:string ;
       vitro:selectFromExistingAnnot
               true ;
-      owl:inverseOf vivo:hasSubOrganization 
+      owl:inverseOf vivo:hasSubOrganization . 
 
 vivo:linkAnchorText a owl:DatatypeProperty ;
     rdfs:label "link anchor text"@en-US ;
