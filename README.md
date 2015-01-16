@@ -1,5 +1,5 @@
 
-###rab-vitro-ontologies
+###rab-ontologies
 
-A repository of ontologies used in (Researchers@Brown](https://vivo.brown.edu/).  
+A repository of ontologies used in [Researchers@Brown](https://vivo.brown.edu/).  
 
