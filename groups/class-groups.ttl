@@ -68,11 +68,3 @@ d:vitroClassGrouppeople a vitro:ClassGroup,
     vitro:displayRank "1"^^xsd:int ;
     vitro:modTime "2009-12-08T10:32:16"^^xsd:dateTime ;
     vitro:mostSpecificType vitro:ClassGroup .
-
-d:vitroClassGrouppublications a vitro:ClassGroup,
-        owl:Thing ;
-    rdfs:label "research"@en-US ;
-    vitro:displayRank "8"^^xsd:int ;
-    vitro:modTime "2009-12-27T08:36:28"^^xsd:dateTime ;
-    vitro:mostSpecificType vitro:ClassGroup .
-

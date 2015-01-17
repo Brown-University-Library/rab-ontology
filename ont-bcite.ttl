@@ -361,6 +361,6 @@ bcite:Contributor a owl:Class ;
 bcite:Citation a owl:Class ;
     rdfs:label "Citation"@en-US ;
     vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
-    vitro:inClassGroup d:vitroClassGrouppublications ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
     vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
 
