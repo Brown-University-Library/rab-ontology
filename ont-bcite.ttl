@@ -1,0 +1,215 @@
+@prefix bcite: <http://vivo.brown.edu/ontology/citation#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://vivo.brown.edu/ontology/citation#> a owl:Ontology .
+
+bcite:Abstract a owl:Class ;
+    rdfs:label "Abstract"@en-US ;
+    rdfs:subClassOf bcite:Citation .
+
+bcite:Article a owl:Class ;
+    rdfs:label "Article"@en-US ;
+    rdfs:subClassOf bcite:Citation .
+
+bcite:Book a owl:Class ;
+    rdfs:label "Book"@en-US ;
+    rdfs:subClassOf bcite:Citation .
+
+bcite:BookSection a owl:Class ;
+    rdfs:label "Book Section"@en-US ;
+    rdfs:subClassOf bcite:Citation .
+
+bcite:Chapter a owl:Class ;
+    rdfs:label "Chapter"@en-US ;
+    rdfs:subClassOf bcite:Citation .
+
+bcite:Patent a owl:Class ;
+    rdfs:label "Patent"@en-US ;
+    rdfs:subClassOf bcite:Citation .
+
+bcite:Review a owl:Class ;
+    rdfs:label "Review"@en-US ;
+    rdfs:subClassOf bcite:Citation .
+
+bcite:WorkingPaper a owl:Class ;
+    rdfs:label "Working Paper"@en-US ;
+    rdfs:subClassOf bcite:Citation .
+
+bcite:authorList a owl:DatatypeProperty ;
+    rdfs:label "author list"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:cvId a owl:DatatypeProperty ;
+    rdfs:label "CV ID"^^xsd:string ;
+    rdfs:range xsd:string .
+
+bcite:date a owl:DatatypeProperty ;
+    rdfs:label "date"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:dateTime .
+
+bcite:doi a owl:DatatypeProperty ;
+    rdfs:label "doi"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:firstName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "first name"@en-US ;
+    rdfs:domain bcite:Contributor .
+
+bcite:isbn a owl:DatatypeProperty ;
+    rdfs:label "isbn"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:issn a owl:DatatypeProperty ;
+    rdfs:label "issn"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:issue a owl:DatatypeProperty ;
+    rdfs:label "issue"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:lastName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "last name"@en-US ;
+    rdfs:domain bcite:Contributor .
+
+bcite:middleName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "middle name"@en-US ;
+    rdfs:domain bcite:Contributor .
+
+bcite:number a owl:DatatypeProperty ;
+    rdfs:label "number"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:oclc a owl:DatatypeProperty ;
+    rdfs:label "OCLC number"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:pageEnd a owl:DatatypeProperty ;
+    rdfs:label "page end"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:pageStart a owl:DatatypeProperty ;
+    rdfs:label "page start"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:pages a owl:DatatypeProperty ;
+    rdfs:label "pages"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:pmcid a owl:DatatypeProperty ;
+    rdfs:label "pmcid"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:pmid a owl:DatatypeProperty ;
+    rdfs:label "pmid"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:title a owl:DatatypeProperty ;
+    rdfs:label "title"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:url a owl:DatatypeProperty ;
+    rdfs:label "url"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:version a owl:DatatypeProperty ;
+    rdfs:label "version"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:volume a owl:DatatypeProperty ;
+    rdfs:label "volume"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:wokId a owl:DatatypeProperty ;
+    rdfs:label "WOK ID"^^xsd:string ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:contributorTo a owl:ObjectProperty ;
+    rdfs:label "selected"@en-US ;
+    rdfs:domain bcite:Contributor ;
+    rdfs:range bcite:Citation ;
+    owl:inverseOf bcite:hasContributor .
+
+bcite:hasContributor a owl:ObjectProperty ;
+    rdfs:label "author"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range bcite:Contributor ;
+    owl:inverseOf bcite:contributorTo .
+
+bcite:hasLocation a owl:ObjectProperty ;
+    rdfs:label "location"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range bcite:Location ;
+    owl:inverseOf bcite:locationFor .
+
+bcite:hasPublisher a owl:ObjectProperty ;
+    rdfs:label "publisher"^^xsd:string,
+        "publisher"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range bcite:Publisher ;
+    owl:inverseOf bcite:publisherFor .
+
+bcite:hasVenue a owl:ObjectProperty ;
+    rdfs:label "publication venue"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range bcite:Venue ;
+    owl:inverseOf bcite:venueFor .
+
+bcite:locationFor a owl:ObjectProperty ;
+    rdfs:label "location for"@en-US ;
+    rdfs:domain bcite:Location ;
+    rdfs:range bcite:Citation ;
+    owl:inverseOf bcite:hasLocation .
+
+bcite:publisherFor a owl:ObjectProperty ;
+    rdfs:label "publishes"^^xsd:string,
+        "publishes"@en-US ;
+    rdfs:domain bcite:Publisher ;
+    rdfs:range bcite:Citation ;
+    owl:inverseOf bcite:hasPublisher .
+
+bcite:venueFor a owl:ObjectProperty ;
+    rdfs:label "publication venue of"@en-US ;
+    rdfs:domain bcite:Venue ;
+    rdfs:range bcite:Citation ;
+    owl:inverseOf bcite:hasVenue .
+
+bcite:Location a owl:Class ;
+    rdfs:label "Location"@en-US .
+
+bcite:Publisher a owl:Class ;
+    rdfs:label "Publisher"^^xsd:string .
+
+bcite:Venue a owl:Class ;
+    rdfs:label "Venue"^^xsd:string .
+
+bcite:Contributor a owl:Class ;
+    rdfs:label "Contributor"^^xsd:string .
+
+bcite:Citation a owl:Class ;
+    rdfs:label "Citation"@en-US .
+

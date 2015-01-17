@@ -1,0 +1,159 @@
+@prefix blocal: <http://vivo.brown.edu/ontology/vivo-brown/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://vivo.brown.edu/ontology/vivo-brown/> a owl:Ontology .
+
+blocal:BrownThing a owl:Class ;
+    rdfs:label "Organization or Person at Brown"@en-US .
+
+blocal:CV a owl:Class ;
+    rdfs:label "CV"@en-US ;
+    rdfs:subClassOf vivo:URLLink .
+
+blocal:ClinicalDepartment a owl:Class ;
+    rdfs:label "Clinical Department"@en-US ;
+    rdfs:subClassOf foaf:Organization .
+
+blocal:InstituteCenterProgram a owl:Class ;
+    rdfs:label "Centers, Programs, and Institutes"@en-US ;
+    rdfs:subClassOf foaf:Organization .
+
+blocal:Place a owl:Class ;
+    rdfs:label "Place"@en-US ;
+    rdfs:subClassOf skos:Concept .
+
+blocal:ResearchArea a owl:Class ;
+    rdfs:label "Research Area"@en-US ;
+    rdfs:subClassOf skos:Concept .
+
+blocal:affiliations a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "affiliations"@en-US ;
+    rdfs:range xsd:string .
+
+blocal:awardsAndHonors a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "awards and honors"@en-US ;
+    rdfs:range xsd:string .
+
+blocal:degreeDate a owl:DatatypeProperty ;
+    rdfs:label "year"@en-US ;
+    rdfs:domain vivo:EducationalTraining ;
+    rdfs:range xsd:gYear .
+
+blocal:fisCreated a owl:DatatypeProperty ;
+    rdfs:label "FIS created date"@en-US ;
+    rdfs:range xsd:date .
+
+blocal:fisUpdated a owl:DatatypeProperty ;
+    rdfs:label "FIS updated date"@en-US ;
+    rdfs:range xsd:date .
+
+blocal:fundedResearch a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "funded research"@en-US ;
+    rdfs:domain vivo:FacultyMember ;
+    rdfs:range xsd:string .
+
+blocal:hasAffiliation a owl:ObjectProperty ;
+    rdfs:label "affiliations"@en-US ;
+    rdfs:domain foaf:Person ;
+    rdfs:range foaf:Organization .
+
+blocal:netId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "Net ID"@en-US ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:string .
+
+blocal:orgUnit a owl:DatatypeProperty ;
+    rdfs:label "organizational unit"@en-US ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:string .
+
+blocal:previousImage a owl:ObjectProperty ;
+    rdfs:label "previous image"@en-US .
+
+blocal:profileUpdated a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "profile updated"@en-US .
+
+blocal:researchStatement a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "research statement"@en-US ;
+    rdfs:domain foaf:Person .
+
+blocal:scholarlyWork a owl:DatatypeProperty ;
+    rdfs:label "scholarly work"@en-US .
+
+blocal:shortId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "shortId"@en-US ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:string .
+
+blocal:cv a owl:ObjectProperty ;
+    rdfs:label "CV"@en-US ;
+    rdfs:subPropertyOf vivo:webpage ;
+    owl:inverseOf blocal:cvOf .
+
+blocal:cvOf a owl:ObjectProperty ;
+    rdfs:label "CV"@en-US ;
+    rdfs:subPropertyOf vivo:webpageOf ;
+    owl:inverseOf blocal:cv .
+
+blocal:delegateFor a owl:ObjectProperty ;
+    rdfs:label "delegate for"@en-US ;
+    rdfs:domain blocal:Delegate ;
+    rdfs:range vivo:FacultyMember ;
+    owl:inverseOf blocal:hasDelegate .
+
+blocal:drrbWebPage a owl:ObjectProperty ;
+    rdfs:label "on the Web"@en-US ;
+    rdfs:range vivo:URLLink ;
+    owl:inverseOf blocal:drrbWebPageOf .
+
+blocal:drrbWebPageOf a owl:ObjectProperty ;
+    rdfs:label "features"@en-US ;
+    rdfs:domain vivo:URLLink ;
+    owl:inverseOf blocal:drrbWebPage .
+
+blocal:geographicResearchAreaOf a owl:ObjectProperty ;
+    rdfs:label "research area of"@en-US ;
+    rdfs:domain skos:Concept ;
+    owl:inverseOf blocal:hasGeographicResearchArea .
+
+blocal:hasDelegate a owl:ObjectProperty ;
+    rdfs:label "has delegate"@en-US ;
+    rdfs:domain vivo:FacultyMember ;
+    rdfs:range blocal:Delegate ;
+    owl:inverseOf blocal:delegateFor .
+
+blocal:hasGeographicResearchArea a owl:ObjectProperty ;
+    rdfs:label "geographic research area"@en-US ;
+    rdfs:range skos:Concept ;
+    owl:inverseOf blocal:geographicResearchAreaOf .
+
+blocal:hasTeacher a owl:ObjectProperty ;
+    rdfs:label "taught by"@en-US ;
+    rdfs:domain vivo:Course ;
+    rdfs:range foaf:Agent ;
+    owl:inverseOf blocal:teacherFor .
+
+blocal:teacherFor a owl:ObjectProperty ;
+    rdfs:label "courses"@en-US ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range vivo:Course ;
+    owl:inverseOf blocal:hasTeacher .
+
+blocal:Delegate a owl:Class ;
+    rdfs:label "Delegate"@en-US ;
+    rdfs:subClassOf foaf:Person .
+

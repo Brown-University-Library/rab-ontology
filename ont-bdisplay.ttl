@@ -1,0 +1,40 @@
+@prefix bdisplay: <http://vivo.brown.edu/ontology/display#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://vivo.brown.edu/ontology/display> a owl:Ontology .
+
+bdisplay:AlpertSchoolOfMedicine a owl:Class ;
+    rdfs:label "Alpert School of Medicine"@en-US ;
+    rdfs:subClassOf bdisplay:OU .
+
+bdisplay:BiologyAndMedicine a owl:Class ;
+    rdfs:label "Biology and Medicine"@en-US ;
+    rdfs:subClassOf bdisplay:OU .
+
+bdisplay:CentersProgramsAndInstitutes a owl:Class ;
+    rdfs:label "Centers, Programs, and Institutes"@en-US ;
+    rdfs:subClassOf bdisplay:OU .
+
+bdisplay:Departments a owl:Class ;
+    rdfs:label "Academic Departments"@en-US ;
+    rdfs:subClassOf bdisplay:OU .
+
+bdisplay:SchoolOfEngineering a owl:Class ;
+    rdfs:label "School of Engineering"@en-US ;
+    rdfs:subClassOf bdisplay:OU .
+
+bdisplay:SchoolOfPublicHealth a owl:Class ;
+    rdfs:label "School of Public Health"@en-US ;
+    rdfs:subClassOf bdisplay:OU .
+
+bdisplay:Schools a owl:Class ;
+    rdfs:label "Schools"@en-US ;
+    rdfs:subClassOf bdisplay:OU .
+
+bdisplay:OU a owl:Class ;
+    rdfs:label "Organizational Unit"@en-US .
+

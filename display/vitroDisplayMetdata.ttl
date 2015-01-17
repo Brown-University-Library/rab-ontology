@@ -1,11 +1,405 @@
+@prefix bcite: <http://vivo.brown.edu/ontology/citation#> .
+@prefix bdisplay: <http://vivo.brown.edu/ontology/display#> .
+@prefix blocal: <http://vivo.brown.edu/ontology/vivo-brown/> .
+@prefix d: <http://vivo.brown.edu/individual/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> .
+@prefix vitrorole: <http://vitro.mannlib.cornell.edu/ns/vitro/role#> .
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://vivo.brown.edu/ontology/citation#> rdfs:label "Brown Citations"@en-US ;
+    vitro:ontologyPrefixAnnot "bcite"^^xsd:string .
+
+bcite:Abstract vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:Article vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:Book vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:BookSection vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:Chapter vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:Citation vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:Contributor vitro:descriptionAnnot "Any others listed on a paper"^^xsd:string .
+
+bcite:Patent vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:Review vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:Venue vitro:inClassGroup d:vitroClassGroupcitations .
+
+bcite:WorkingPaper vitro:displayLimitAnnot "-1"^^xsd:int ;
+    vitro:displayRankAnnot "-1"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcitations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:authorList vitro:displayRankAnnot "0"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:contributorTo vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupbibliographic ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+bcite:date vitro:displayRankAnnot "2"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:doi vitro:displayRankAnnot "40"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:firstName vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:hasContributor vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupoverview ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+bcite:hasLocation vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:displayRankAnnot "22"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+bcite:hasPublisher vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:displayRankAnnot "21"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+bcite:hasVenue vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:displayRankAnnot "10"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+bcite:isbn vitro:displayRankAnnot "40"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:issn vitro:displayRankAnnot "40"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:issue vitro:displayRankAnnot "20"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:lastName vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:locationFor vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+bcite:middleName vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:number vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:oclc vitro:exampleAnnot "OCLC number"^^xsd:string ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupidentifiers ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:publicDescriptionAnnot "OCLC number"^^xsd:string .
+
+bcite:pageEnd vitro:displayRankAnnot "20"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:pageStart vitro:displayRankAnnot "20"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:pages vitro:displayRankAnnot "20"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:pmcid vitro:displayRankAnnot "40"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:pmid vitro:displayRankAnnot "40"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:publisherFor vitro:displayLimitAnnot "-1"^^xsd:int .
+
+bcite:title vitro:displayRankAnnot "1"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:url vitro:displayRankAnnot "20"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:venueFor vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupoverview ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+bcite:version vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bcite:volume vitro:displayRankAnnot "20"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupCitationInformation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+<http://vivo.brown.edu/ontology/display> rdfs:label "Brown Display"@en-US ;
+    vitro:ontologyPrefixAnnot "bdisplay"^^xsd:string .
+
+bdisplay:AlpertSchoolOfMedicine vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:dbAdmin ;
+    vitro:inClassGroup d:vitroClassGroupBrownOUs ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bdisplay:BiologyAndMedicine vitro:displayRankAnnot "3"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:dbAdmin ;
+    vitro:inClassGroup d:vitroClassGroupBrownOUs ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:dbAdmin .
+
+bdisplay:CentersProgramsAndInstitutes vitro:displayRankAnnot "2"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupBrownOUs ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bdisplay:Departments vitro:displayRankAnnot "1"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupBrownOUs ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bdisplay:OU vitro:descriptionAnnot "Org unit at Brown."^^xsd:string ;
+    vitro:displayLimitAnnot "-1"^^xsd:int ;
+    vitro:displayRankAnnot "-1"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupBrownOUs ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bdisplay:SchoolOfEngineering vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupBrownOUs ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bdisplay:SchoolOfPublicHealth vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupBrownOUs ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+bdisplay:Schools vitro:displayRankAnnot "4"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupBrownOUs ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+<http://vivo.brown.edu/ontology/vivo-brown/> rdfs:label "Brown Local"@en-US ;
+    vitro:ontologyPrefixAnnot "blocal"^^xsd:string .
+
+blocal:BrownThing vitro:descriptionAnnot "Used for restricting people, organizations, etc to Brown.  "^^xsd:string ;
+    vitro:exampleAnnot "Any Thing related to Brown"^^xsd:string ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:curator ;
+    vitro:isMenuPageIntersectionClass "true" ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:curator ;
+    vitro:shortDef "Generic Brown Thing"^^xsd:string .
+
+blocal:CV vitro:displayLimitAnnot "-1"^^xsd:int ;
+    vitro:displayRankAnnot "-1"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:shortDef "PDF of CV"^^xsd:string .
+
+blocal:ClinicalDepartment vitro:descriptionAnnot "A type of Brown organizational unit"^^xsd:string ;
+    vitro:displayLimitAnnot "-1"^^xsd:int ;
+    vitro:displayRankAnnot "-1"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouporganizations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+blocal:Delegate vitro:displayLimitAnnot "-1"^^xsd:int ;
+    vitro:displayRankAnnot "-1"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouppeople ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+blocal:InstituteCenterProgram vitro:descriptionAnnot "Requested grouping for Brown local org units. "^^xsd:string ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouporganizations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+blocal:Place vitro:inClassGroup d:vitroClassGrouplocations .
+
+blocal:ResearchArea vitro:descriptionAnnot "Subclass of skos:Concept.  At this point the distinction is for display purposes only.  "^^xsd:string ;
+    vitro:displayLimitAnnot "-1"^^xsd:int ;
+    vitro:displayRankAnnot "-1"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouppublications ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:shortDef "Research topics"^^xsd:string .
+
+blocal:affiliations vitro:displayRankAnnot "40"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+blocal:awardsAndHonors vitro:displayRankAnnot "20"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupbiography ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+blocal:cv vitro:displayLimitAnnot "5"^^xsd:int .
+
+blocal:cvOf vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+blocal:degreeDate vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGrouptime ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+blocal:delegateFor vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+blocal:drrbWebPage vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:displayRankAnnot "11"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupbiography ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
+
+blocal:drrbWebPageOf vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:displayRankAnnot "11"^^xsd:int .
+
+blocal:fisCreated vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:curator ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupidentifiers ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:curator .
+
+blocal:fisUpdated vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:curator ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupidentifiers ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:curator .
+
+blocal:fundedResearch vitro:displayRankAnnot "30"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupresearch ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+blocal:geographicResearchAreaOf vitro:displayRankAnnot "60"^^xsd:int ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupoverview .
+
+blocal:hasAffiliation vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:publicDescriptionAnnot "Affiliations with organizational units.  "^^xsd:string ;
+    vitro:selectFromExistingAnnot true .
+
+blocal:hasDelegate vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:editor ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupidentifiers ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:editor ;
+    vitro:selectFromExistingAnnot true .
+
+blocal:hasGeographicResearchArea vitro:displayRankAnnot "60"^^xsd:int ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupresearch .
+
+blocal:hasTeacher vitro:displayLimitAnnot "5"^^xsd:int .
+
+blocal:netId vitro:exampleAnnot "Brown University Net ID.  "^^xsd:string ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:curator ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupidentifiers ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:curator .
+
+blocal:orgUnit vitro:descriptionAnnot "Brown organizational unit as reported by LDAP.  "^^xsd:string ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:curator ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:curator .
+
+blocal:previousImage vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:dbAdmin ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:dbAdmin ;
+    vitro:selectFromExistingAnnot true .
+
+blocal:profileUpdated vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:editor ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:editor .
+
+blocal:researchStatement vitro:descriptionAnnot "Long form research statement imported from the DRRB."^^xsd:string ;
+    vitro:displayLimitAnnot "1"^^xsd:int ;
+    vitro:displayRankAnnot "20"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupresearch ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:publicDescriptionAnnot "Faculty research statement."^^xsd:string .
+
+blocal:scholarlyWork vitro:displayRankAnnot "5"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupresearch ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
+
+blocal:shortId vitro:descriptionAnnot "Brown University shortId."^^xsd:string ;
+    vitro:exampleAnnot "Brown University shortId."^^xsd:string ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:editor ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupidentifiers ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:dbAdmin ;
+    vitro:publicDescriptionAnnot "Brown University shortId."^^xsd:string .
+
+blocal:teacherFor vitro:displayLimitAnnot "5"^^xsd:int ;
+    vitro:displayRankAnnot "3"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupteaching ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
+    vitro:selectFromExistingAnnot true .
 
 <http://vivoweb.org/ontology/core> rdfs:label "VIVO core"@en-US ;
     vitro:ontologyPrefixAnnot "vivo"^^xsd:string .
@@ -13,63 +407,63 @@
 vivo:AcademicDepartment vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "Endodontics (department within a College of Dentistry); English (department within a College of Liberal Arts)"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGrouporganizations> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouporganizations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "A distinct, usually specialized educational unit within an educational organization."^^xsd:string .
 
 vivo:AcademicTerm vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "An explicit individual academic term, quarter, or semester rather than the generic fall, spring or summer semester."^^xsd:string .
 
 vivo:Course vitro:descriptionAnnot "A course as taught in one time period (such as a semester; although note that a course could consist of only one meeting (teaching session)) by one or more instructors, normally but not always for credit. Does not represent either each meeting of the course or the course offering such as Biology 101 taught every semester from 1980 to 2010"^^xsd:string ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGroupcourses> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGroupcourses ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "A course as taught in one time period by one or more instructors, normally but not always for credit. Does not represent either each meeting of the course or the course offering such as Biology 101 taught every semester from 1980 to 2010"^^xsd:string .
 
 vivo:DateTimeInterval vitro:displayLimitAnnot "4"^^xsd:int ;
     vitro:displayRankAnnot "4"^^xsd:int ;
     vitro:extendedLinkedData true ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "a specific period or duration, defined by (optional) start and end date/times."^^xsd:string .
 
 vivo:DateTimeValue vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:extendedLinkedData true ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "A date and/or time"^^xsd:string .
 
 vivo:Department vitro:descriptionAnnot "Definition modified from the definition here: http://dictionary.reference.com/browse/department. It is difficult to tell the difference between and department and a division."^^xsd:string ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "Legal (department within a company); Use for any non-academic department"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGrouporganizations> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouporganizations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "A distinct, usually ongoing and specialized unit within a large organization."^^xsd:string .
 
 vivo:Division vitro:descriptionAnnot "Definition modified from http://www.thefreedictionary.com/division.  It is difficult to tell the difference between a division and a department."^^xsd:string ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "Cardiovascular Medicine (division within medicine)"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGrouporganizations> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouporganizations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "An area of corporate activity organized as an administrative or functional unit."^^xsd:string .
 
 vivo:EducationalTraining vitro:descriptionAnnot "This connects person to their academic degree through this educational training, but can also be used when the training does not result in a degree."^^xsd:string ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "Currently any abstract name is given to individuals of this class. This could change in the future."^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "Represents educational training that has been received."^^xsd:string .
 
 vivo:FacultyAdministrativePosition vitro:descriptionAnnot "That is a position held by an academic faculty member who works for administration."^^xsd:string ;
@@ -77,16 +471,16 @@ vivo:FacultyAdministrativePosition vitro:descriptionAnnot "That is a position he
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "Associate Dean"^^xsd:string ;
     vitro:extendedLinkedData true ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "An academic administrative position (associate dean, etc.) as distinct from a professional administrative position (non-academic)"^^xsd:string .
 
 vivo:FacultyMember vitro:descriptionAnnot "Definition from here: http://research.carleton.ca/htr/defs.php."^^xsd:string ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGrouppeople> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouppeople ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "A person with at least one academic appointment to a specific faculty of a university or institution of higher learning."^^xsd:string .
 
 vivo:FacultyPosition vitro:descriptionAnnot "Professor, associate professor and assistant professor are common positions for academic faculty."^^xsd:string ;
@@ -94,8 +488,8 @@ vivo:FacultyPosition vitro:descriptionAnnot "Professor, associate professor and 
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "Professor; Associate Professor; Assistant Professor"^^xsd:string ;
     vitro:extendedLinkedData true ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "Academic position in a university or institution"^^xsd:string .
 
 vivo:Position vitro:descriptionAnnot "An employment activity, whether compensated or not. Short definition comes from http://en.wikipedia.org/wiki/Position, and has been modified."^^xsd:string ;
@@ -103,46 +497,46 @@ vivo:Position vitro:descriptionAnnot "An employment activity, whether compensate
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "Director of Admissions and Placement; Associate University Librarian"^^xsd:string ;
     vitro:extendedLinkedData true ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "Particular position in an organization, commonly identified by job title, and normally associated with a job description that details the tasks and responsibilities that go with the position."^^xsd:string .
 
 vivo:URLLink vitro:descriptionAnnot "The full URL."^^xsd:string ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "http://info.slis.indiana.edu/~katy/"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "Uniform Resource Locator (URL) specifies where an identified resource is available and the mechanism for retrieving it."^^xsd:string .
 
 vivo:University vitro:descriptionAnnot "Definition taken from: http://en.wikipedia.org/wiki/University"^^xsd:string ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "University of Florida; Washington University in St. Louis"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGrouporganizations> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouporganizations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "An institution of higher education and research, which grants academic degrees in a variety of subjects, and provides both undergraduate education and postgraduate education."^^xsd:string .
 
 vivo:dateTime vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "5"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "Use when a single date and time is appropriate versus a start date and time and end date and time, or when multiple dates and times are relevant."^^xsd:string .
 
 vivo:dateTimeInterval vitro:customEntryFormAnnot "edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.DateTimeIntervalFormGenerator"^^xsd:string ;
     vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "5"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGrouptime> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGrouptime ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:selectFromExistingAnnot true .
 
 vivo:dateTimePrecision vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "5"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:selectFromExistingAnnot true .
 
 vivo:educationalTraining vitro:customEntryFormAnnot "edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.PersonHasEducationalTraining"^^xsd:string ;
@@ -150,74 +544,74 @@ vivo:educationalTraining vitro:customEntryFormAnnot "edu.cornell.mannlib.vitro.w
     vitro:displayRankAnnot "10"^^xsd:int ;
     vitro:forceStubDeletionAnnot true ;
     vitro:fullPropertyNameAnnot "educational background"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupbiography> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupbiography ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "This relates a person to the description of their educational training."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
 vivo:educationalTrainingOf vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
     vitro:fullPropertyNameAnnot "educational background of"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupoverview> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupoverview ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "This relates a person's educational training to the person."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
 vivo:end vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "99"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:selectFromExistingAnnot false .
 
 vivo:hasCollaborator vitro:customEntryFormAnnot "edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.AutocompleteObjectPropertyFormGenerator"^^xsd:string ;
     vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "Use for a simple assertion that a person or organization is your collaborator; to describe the relationship in more detail enter a role for each collaborator in some common endeavor."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
 vivo:hasResearchArea vitro:customEntryFormAnnot "edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.AddAssociatedConceptGenerator"^^xsd:string ;
     vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupresearch> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupresearch ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:selectFromExistingAnnot true .
 
 vivo:hasSubOrganization vitro:collateBySubclassAnnot true ;
     vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "15"^^xsd:int ;
     vitro:fullPropertyNameAnnot "hasSubOrganization"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "Relates an organization to the sub-organization that it contains."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
-vivo:linkAnchorText vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGrouplinks> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+vivo:linkAnchorText vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGrouplinks ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "Used to provide a visible, clickable text to a hyperlink in VIVO."^^xsd:string .
 
-vivo:linkURI vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGrouplinks> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+vivo:linkURI vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGrouplinks ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "Provides the URL for a hyperlink in VIVO."^^xsd:string .
 
 vivo:middleName vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "20"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaddress> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#editor> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaddress ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:editor ;
     vitro:publicDescriptionAnnot "The middle name or initial with which you normally identify yourself.  Only one may be entered."^^xsd:string .
 
 vivo:organizationForPosition vitro:collateBySubclassAnnot true ;
@@ -225,26 +619,26 @@ vivo:organizationForPosition vitro:collateBySubclassAnnot true ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
     vitro:fullPropertyNameAnnot "employer having employment"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
     vitro:individualSortDirectionAnnot "desc"^^xsd:string ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "This relates an organization to the person's position(s) within that organization."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
 vivo:organizationForTraining vitro:displayLimitAnnot "5"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
     vitro:individualSortDirectionAnnot "desc"^^xsd:string ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#curator> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:curator ;
     vitro:selectFromExistingAnnot true .
 
 vivo:overview vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupoverview> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupoverview ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "A short narrative summary to be used as a single descriptive overview statement."^^xsd:string .
 
 vivo:personInPosition vitro:customEntryFormAnnot "edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.PersonHasPositionHistoryGenerator"^^xsd:string ;
@@ -252,31 +646,31 @@ vivo:personInPosition vitro:customEntryFormAnnot "edu.cornell.mannlib.vitro.weba
     vitro:displayRankAnnot "40"^^xsd:int ;
     vitro:forceStubDeletionAnnot true ;
     vitro:fullPropertyNameAnnot "current positions"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#curator> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:curator ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
     vitro:individualSortDirectionAnnot "desc"^^xsd:string ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "This relates a person to their position information."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
 vivo:positionForPerson vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "40"^^xsd:int ;
     vitro:fullPropertyNameAnnot "involves employee"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupoverview> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupoverview ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "This relates a person's position information to the person themselves."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
 vivo:positionInOrganization vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
     vitro:fullPropertyNameAnnot "involves employer"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "This relates a person's position to the organization that has that position. "^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
@@ -284,70 +678,70 @@ vivo:preferredTitle vitro:descriptionAnnot "For example an HR job title for a pe
     vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
     vitro:exampleAnnot "Physical Sciences Librarian"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#selfEditor> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:selfEditor ;
     vitro:publicDescriptionAnnot "Enter the title you would prefer to use.  This would be different from, and in addition to, your HR job title."^^xsd:string .
 
 vivo:primaryEmail vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "50"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaddress> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaddress ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
 
 vivo:rank vitro:descriptionAnnot "this number indicates a position in a list"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "enter the position in the list that you would like this item displayed"^^xsd:string .
 
 vivo:researchAreaOf vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupoverview> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupoverview ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:selectFromExistingAnnot true .
 
 vivo:researchOverview vitro:descriptionAnnot "Used for a single narrative summary of research, typically covering a wide range of activities and time periods; use Researcher Role for information on individual activities"^^xsd:string ;
     vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupresearch> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupresearch ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public .
 
 vivo:start vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "80"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "the start of a time interval."^^xsd:string ;
     vitro:selectFromExistingAnnot false .
 
 vivo:subOrganizationWithin vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "16"^^xsd:int ;
     vitro:fullPropertyNameAnnot "subOrganizationWithin"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaffiliation ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "Relates an sub-organization to the organization that contains it."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
 vivo:teachingOverview vitro:descriptionAnnot "Used for a single narrative summary of teaching, typically covering a wide range of courses including for credit and non-credit teaching over multiple semesters; the \"teaches\" property links a person directly with an instance of a Semester Class, typically from an institutional database of record; then use Teacher Role for information about a person's role in non-credit teaching or their specific contribution to individual courses"^^xsd:string ;
     vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "1"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupteaching> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupteaching ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "Please enter a single narrative summary description of your teaching activities, goals, and/or experience"^^xsd:string .
 
 vivo:trainingAtOrganization vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "20"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupoverview> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupoverview ;
     vitro:individualSortDirectionAnnot "desc"^^xsd:string ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "This relates an instance of Educational Training to the Organization that provided the training."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
@@ -355,46 +749,46 @@ vivo:webpage vitro:customEntryFormAnnot "edu.cornell.mannlib.vitro.webapp.edit.n
     vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "40"^^xsd:int ;
     vitro:fullPropertyNameAnnot "webpage"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaddress> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaddress ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "The core:webpage relates to an intermediate node (of type core:URLLink) that allows specifying the homepage URL as a literal, as well as a human-readable label (\"anchor text\") for the link. "^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
 vivo:webpageOf vitro:displayLimitAnnot "5"^^xsd:int ;
     vitro:displayRankAnnot "40"^^xsd:int ;
     vitro:fullPropertyNameAnnot "webpageOf"^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupoverview> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupoverview ;
     vitro:offerCreateNewOptionAnnot true ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:publicDescriptionAnnot "The core:webpage relates to an intermediate node (of type core:URLLink) that allows specifying the homepage URL as a literal, as well as a human-readable label (\"anchor text\") for the link."^^xsd:string ;
     vitro:selectFromExistingAnnot true .
 
 <http://www.w3.org/2004/02/skos/core> rdfs:label "SKOS (Simple Knowledge Organization System)"@en-US ;
     vitro:ontologyPrefixAnnot "skos"^^xsd:string .
 
-<http://www.w3.org/2004/02/skos/core#Concept> vitro:displayLimitAnnot "-1"^^xsd:int ;
+skos:Concept vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "35"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGrouppublications> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouppublications ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "An idea or notion; a unit of thought."^^xsd:string .
 
-<http://www.w3.org/2004/02/skos/core#exactMatch> vitro:displayLimitAnnot "-1"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+skos:exactMatch vitro:displayLimitAnnot "-1"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:dbAdmin ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:dbAdmin ;
     vitro:selectFromExistingAnnot true .
 
-<http://xmlns.com/foaf/0.1/> rdfs:label "FOAF"@en-US ;
+foaf: rdfs:label "FOAF"@en-US ;
     vitro:ontologyPrefixAnnot "foaf"^^xsd:string .
 
 foaf:Agent vitro:descriptionAnnot "see: http://xmlns.com/foaf/spec/#term_Agent"^^xsd:string ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "Agents are things that do stuff"^^xsd:string .
 
 foaf:Organization vitro:customDisplayViewAnnot "individual--foaf-organization.ftl"^^xsd:string ;
@@ -402,32 +796,32 @@ foaf:Organization vitro:customDisplayViewAnnot "individual--foaf-organization.ft
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
     vitro:exampleAnnot "Only use if no specific subclasses of foaf:organization desribe the organization."^^xsd:string ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGrouporganizations> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouporganizations ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "A generic class encompassing several types of organizations."^^xsd:string .
 
 foaf:Person vitro:customDisplayViewAnnot "individual--foaf-person.ftl"^^xsd:string ;
     vitro:displayLimitAnnot "-1"^^xsd:int ;
     vitro:displayRankAnnot "-1"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inClassGroup <http://vivo.brown.edu/individual/vitroClassGrouppeople> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inClassGroup d:vitroClassGrouppeople ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:public ;
     vitro:shortDef "The most general classification of a person"^^xsd:string .
 
 foaf:firstName vitro:descriptionAnnot "http://xmlns.com/foaf/spec/#term_firstName.  Note from foaf: \"The lastName  property is provided (alongside firstName) as a mechanism to support legacy data that cannot be easily interpreted in terms of the (otherwise preferred) familyName  and givenName  properties. The concepts of 'first' and 'last' names do not work well across cultural and linguistic boundaries; however they are widely used in addressbooks and databases.\""^^xsd:string ;
     vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "10"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaddress> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#editor> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaddress ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:editor ;
     vitro:publicDescriptionAnnot "The legal first name of a person as indicated in data loaded most likely from their institution.  Only 1 first name can be displayed for each individual."^^xsd:string .
 
 foaf:lastName vitro:descriptionAnnot "http://xmlns.com/foaf/spec/#term_lastName. Note from foaf: \"The lastName  property is provided (alongside firstName) as a mechanism to support legacy data that cannot be easily interpreted in terms of the (otherwise preferred) familyName  and givenName  properties. The concepts of 'first' and 'last' names do not work well across cultural and linguistic boundaries; however they are widely used in addressbooks and databases.\""^^xsd:string ;
     vitro:displayLimitAnnot "1"^^xsd:int ;
     vitro:displayRankAnnot "30"^^xsd:int ;
-    vitro:hiddenFromDisplayBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-    vitro:inPropertyGroupAnnot <http://vivo.brown.edu/individual/vitroPropertyGroupaddress> ;
-    vitro:prohibitedFromUpdateBelowRoleLevelAnnot <http://vitro.mannlib.cornell.edu/ns/vitro/role#editor> ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot vitrorole:public ;
+    vitro:inPropertyGroupAnnot d:vitroPropertyGroupaddress ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot vitrorole:editor ;
     vitro:publicDescriptionAnnot "The legal last name of a person as indicated in data loaded most likely from their institution. Only 1 last name can be displayed for each individual."^^xsd:string .
 
