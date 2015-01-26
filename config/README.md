@@ -1,0 +1,1 @@
+VIVO/Vitro application configuration metadata.
