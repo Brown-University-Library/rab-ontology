@@ -27,6 +27,10 @@ bcite:Chapter a owl:Class ;
     rdfs:label "Chapter"@en-US ;
     rdfs:subClassOf bcite:Citation .
 
+bcite:ConferencePaper a owl:Class ;
+    rdfs:label "Conference Paper"@en-US ;
+    rdfs:subClassOf bcite:Citation .
+
 bcite:Patent a owl:Class ;
     rdfs:label "Patent"@en-US ;
     rdfs:subClassOf bcite:Citation .
@@ -49,6 +53,11 @@ bcite:cvId a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 bcite:date a owl:DatatypeProperty ;
+    rdfs:label "date"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:dateTime .
+
+bcite:conferenceDate a owl:DatatypeProperty ;
     rdfs:label "date"@en-US ;
     rdfs:domain bcite:Citation ;
     rdfs:range xsd:dateTime .
@@ -148,11 +157,29 @@ bcite:wokId a owl:DatatypeProperty ;
     rdfs:domain bcite:Citation ;
     rdfs:range xsd:string .
 
+bcite:conferenceLocationFor a owl:ObjectProperty ;
+    rdfs:label "conference location for"@en-US ;
+    rdfs:domain bcite:ConferenceLocation ;
+    rdfs:range bcite:Citation ;
+    owl:inverseOf bcite:hasConferenceLocation .
+
 bcite:contributorTo a owl:ObjectProperty ;
     rdfs:label "selected"@en-US ;
     rdfs:domain bcite:Contributor ;
     rdfs:range bcite:Citation ;
     owl:inverseOf bcite:hasContributor .
+
+bcite:hasConference a owl:ObjectProperty ;
+    rdfs:label "conference"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range bcite:Conference ;
+    owl:inverseOf bcite:conferenceFor .
+
+bcite:hasConferenceLocation a owl:ObjectProperty ;
+    rdfs:label "location of conference"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range bcite:ConferenceLocation ;
+    owl:inverseOf bcite:conferenceLocationFor .
 
 bcite:hasContributor a owl:ObjectProperty ;
     rdfs:label "author"@en-US ;
@@ -198,14 +225,26 @@ bcite:venueFor a owl:ObjectProperty ;
     rdfs:range bcite:Citation ;
     owl:inverseOf bcite:hasVenue .
 
+bcite:conferenceFor a owl:ObjectProperty ;
+    rdfs:label "conference papers"@en-US ;
+    rdfs:domain bcite:Conference ;
+    rdfs:range bcite:Citation ;
+    owl:inverseOf bcite:hasConference .
+
 bcite:Location a owl:Class ;
     rdfs:label "Location"@en-US .
+
+bcite:ConferenceLocation a owl:Class ;
+    rdfs:label "Conference location"@en-US .
 
 bcite:Publisher a owl:Class ;
     rdfs:label "Publisher"^^xsd:string .
 
 bcite:Venue a owl:Class ;
     rdfs:label "Venue"^^xsd:string .
+
+bcite:Conference a owl:Class ;
+    rdfs:label "Conference"^^xsd:string .
 
 bcite:Contributor a owl:Class ;
     rdfs:label "Contributor"^^xsd:string .
