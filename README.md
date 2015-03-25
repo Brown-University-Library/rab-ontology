@@ -8,7 +8,7 @@ A repository of ontologies used in [Researchers@Brown](https://vivo.brown.edu/).
 * `core` - ontologies based on those bundled with the [VIVO](http://vivoweb.org) application.
 * `local` - local extensions for modeling R@B data.
 * `config` - application configuration statements necessary for running the VIVO application.
-* `docs` - diagrams identifying how data is modeled in R@B.
+* `docs` - diagrams identifying how data is modeled.
 * `scripts` - Python scripts for processing the ontology files.
 
 
