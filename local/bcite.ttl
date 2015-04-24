@@ -48,6 +48,18 @@ bcite:authorList a owl:DatatypeProperty ;
     rdfs:domain bcite:Citation ;
     rdfs:range xsd:string .
 
+bcite:citedAs a owl:ObjectProperty ;
+        rdfs:domain blocal:Work ;
+        rdfs:label "contributors"@en-US ;
+        rdfs:range bcite:Citation ;
+        owl:inverseOf bcite:cites .
+
+bcite:cites a owl:ObjectProperty ;
+        rdfs:domain bcite:Citation ;
+        rdfs:label "cites"@en-US ;
+        rdfs:range blocal:Work ;
+        owl:inverseOf bcite:citedAs .
+
 bcite:cvId a owl:DatatypeProperty ;
     rdfs:label "CV ID"^^xsd:string ;
     rdfs:range xsd:string .
@@ -64,7 +76,6 @@ bcite:conferenceDate a owl:DatatypeProperty ;
 
 bcite:doi a owl:DatatypeProperty ;
     rdfs:label "doi"@en-US ;
-    rdfs:domain bcite:Citation ;
     rdfs:range xsd:string .
 
 bcite:firstName a owl:DatatypeProperty,
@@ -124,12 +135,10 @@ bcite:pages a owl:DatatypeProperty ;
 
 bcite:pmcid a owl:DatatypeProperty ;
     rdfs:label "pmcid"@en-US ;
-    rdfs:domain bcite:Citation ;
     rdfs:range xsd:string .
 
 bcite:pmid a owl:DatatypeProperty ;
     rdfs:label "pmid"@en-US ;
-    rdfs:domain bcite:Citation ;
     rdfs:range xsd:string .
 
 bcite:title a owl:DatatypeProperty ;

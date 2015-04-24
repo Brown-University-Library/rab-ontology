@@ -157,3 +157,5 @@ blocal:Delegate a owl:Class ;
     rdfs:label "Delegate"@en-US ;
     rdfs:subClassOf foaf:Person .
 
+blocal:Work a owl:Class ;
+        rdfs:label "Work"@en-US .
