@@ -38,3 +38,10 @@ bdisplay:Schools a owl:Class ;
 bdisplay:OU a owl:Class ;
     rdfs:label "Organizational Unit"@en-US .
 
+bdisplay:Hidden a owl:Class ;
+    rdfs:label "Hidden"@en-US .
+
+bdisplay:hideFromDisplay
+        a           owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:label  "hide from display"@en-US ;
+        rdfs:range  xsd:boolean
