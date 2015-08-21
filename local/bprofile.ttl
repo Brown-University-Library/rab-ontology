@@ -21,7 +21,7 @@ bprofile:hospitalAppointmentFor
         vitro:displayRankAnnot   "42"^^xsd:int ;
         owl:inverseOf            bprofile:hasHospitalAppointment .
 
-bprofile:accreditedBy
+bprofile:credentialHasAccreditor
         a                              owl:ObjectProperty ;
         rdfs:domain                    bprofile:Credential ;
         rdfs:label                     "granted by"@en-US ;
@@ -34,11 +34,10 @@ bprofile:accreditedBy
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:selectFromExistingAnnot  true ;
-        owl:inverseOf                  bprofile:grantsCredential .
+        owl:inverseOf                  bprofile:accreditorForCredential .
 
 bprofile:Certifier  a            owl:Class ;
         rdfs:label               "Certifier"@en-US ;
-        rdfs:subClassOf          bprofile:Accreditor ;
         vitro:displayLimitAnnot  "-1"^^xsd:int ;
         vitro:displayRankAnnot   "-1"^^xsd:int ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
@@ -81,15 +80,15 @@ bprofile:hasHospitalAppointment
         rdfs:label                 "Brown Profiles"@en-US ;
         vitro:ontologyPrefixAnnot  "bprofile"^^xsd:string .
 
-bprofile:hasPostdocSpecialtyOrDepartment
+bprofile:postdocAppointmentHasSpecialty
         a                        owl:ObjectProperty ;
         rdfs:domain              bprofile:PostdocAppointment ;
         rdfs:label               "specialty"@en-US ;
-        rdfs:range               bprofile:PostdocSpecialtyorDepartment ;
+        rdfs:range               bprofile:Specialty ;
         vitro:displayLimitAnnot  "5"^^xsd:int ;
-        owl:inverseOf            bprofile:postdocSpecialtyOrDepartmentForAppointment .
+        owl:inverseOf            bprofile:specialtyForPostDocAppointment .
 
-bprofile:grantsCredential
+bprofile:accreditorForCredential
         a                              owl:ObjectProperty ;
         rdfs:domain                    bprofile:Accreditor ;
         rdfs:label                     "licenses/credentials"@en-US ;
@@ -103,7 +102,7 @@ bprofile:grantsCredential
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:selectFromExistingAnnot  true ;
-        owl:inverseOf                  bprofile:accreditedBy .
+        owl:inverseOf                  bprofile:credentialHasAccreditor .
 
 bprofile:hasCredential
         a                              owl:ObjectProperty ;
@@ -123,7 +122,7 @@ bprofile:hasCredential
 
 bprofile:hospitalForPostdocAppointment
         a                              owl:ObjectProperty ;
-        rdfs:domain                    bprofile:PostdocAppointmentHospital ;
+        rdfs:domain                    bprofile:Hospital ;
         rdfs:label                     "postdoctoral appointment"@en-US ;
         rdfs:range                     bprofile:PostdocAppointment ;
         vitro:displayLimitAnnot        "5"^^xsd:int ;
@@ -135,13 +134,13 @@ bprofile:hospitalForPostdocAppointment
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:selectFromExistingAnnot  true ;
-        owl:inverseOf                  bprofile:hasPostdocAppointmentHospital .
+        owl:inverseOf                  bprofile:postdocAppointmentHasHospital .
 
-bprofile:hasCredentialSpecialty
+bprofile:certificationHasSpecialty
         a                              owl:ObjectProperty ;
-        rdfs:domain                    bprofile:Credential ;
+        rdfs:domain                    bprofile:Certification ;
         rdfs:label                     "specialty"@en-US ;
-        rdfs:range                     bprofile:CredentialSpecialty ;
+        rdfs:range                     bprofile:Specialty ;
         vitro:displayLimitAnnot        "5"^^xsd:int ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
@@ -150,7 +149,7 @@ bprofile:hasCredentialSpecialty
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:selectFromExistingAnnot  true ;
-        owl:inverseOf                  bprofile:credentialSpecialtyFor .
+        owl:inverseOf                  bprofile:specialtyForCertification .
 
 bprofile:state  a   owl:DatatypeProperty ;
         rdfs:label  "state"@en-US ;
@@ -164,7 +163,6 @@ bprofile:state  a   owl:DatatypeProperty ;
 
 bprofile:Licensor  a             owl:Class ;
         rdfs:label               "Licensor"@en-US ;
-        rdfs:subClassOf          bprofile:Accreditor ;
         vitro:displayLimitAnnot  "-1"^^xsd:int ;
         vitro:displayRankAnnot   "-1"^^xsd:int ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
@@ -172,9 +170,9 @@ bprofile:Licensor  a             owl:Class ;
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
-bprofile:HospitalAppointmentOrganization
+bprofile:Hospital
         a           owl:Class ;
-        rdfs:label  "Hospital Organization"@en-US ;
+        rdfs:label  "Hospital"@en-US ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:hiddenFromPublishBelowRoleLevelAnnot
@@ -182,11 +180,11 @@ bprofile:HospitalAppointmentOrganization
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
-bprofile:credentialSpecialtyFor
+bprofile:specialtyForCertification
         a                              owl:ObjectProperty ;
-        rdfs:domain                    bprofile:CredentialSpecialty ;
+        rdfs:domain                    bprofile:Specialty ;
         rdfs:label                     "specialty for credential"@en-US ;
-        rdfs:range                     bprofile:Credential ;
+        rdfs:range                     bprofile:Certification ;
         vitro:displayLimitAnnot        "5"^^xsd:int ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
@@ -196,12 +194,11 @@ bprofile:credentialSpecialtyFor
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:selectFromExistingAnnot  true ;
-        owl:inverseOf                  bprofile:hasCredentialSpecialty .
+        owl:inverseOf                  bprofile:certificationHasSpecialty .
 
 bprofile:Certification
         a                        owl:Class ;
         rdfs:label               "Certification"@en-US ;
-        rdfs:subClassOf          bprofile:Credential ;
         vitro:displayLimitAnnot  "-1"^^xsd:int ;
         vitro:displayRankAnnot   "-1"^^xsd:int ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
@@ -209,23 +206,11 @@ bprofile:Certification
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
-bprofile:PostdocAppointmentOrganization
-        a                        owl:Class ;
-        rdfs:label               "Postdoc Appointment Organization"@en-US ;
-        vitro:displayLimitAnnot  "-1"^^xsd:int ;
-        vitro:displayRankAnnot   "-1"^^xsd:int ;
-        vitro:hiddenFromDisplayBelowRoleLevelAnnot
-                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-        vitro:hiddenFromPublishBelowRoleLevelAnnot
-                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
-                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
-
-bprofile:hasPostdocAppointmentHospital
+bprofile:postdocAppointmentHasHospital
         a                        owl:ObjectProperty ;
         rdfs:domain              bprofile:PostdocAppointment ;
         rdfs:label               "hospital"@en-US ;
-        rdfs:range               bprofile:PostdocAppointmentHospital ;
+        rdfs:range               bprofile:Hospital ;
         vitro:displayLimitAnnot  "5"^^xsd:int ;
         owl:inverseOf            bprofile:hospitalForPostdocAppointment .
 
@@ -278,18 +263,6 @@ bprofile:endDate  a  owl:DatatypeProperty ;
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
 
-bprofile:PostdocAppointmentHospital
-        a                        owl:Class ;
-        rdfs:label               "Postdoc Appointment Hospital"@en-US ;
-        vitro:displayLimitAnnot  "-1"^^xsd:int ;
-        vitro:displayRankAnnot   "-1"^^xsd:int ;
-        vitro:hiddenFromDisplayBelowRoleLevelAnnot
-                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-        vitro:hiddenFromPublishBelowRoleLevelAnnot
-                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
-                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
-
 bprofile:hasPostdocAppointment
         a                              owl:ObjectProperty ;
         rdfs:label                     "postdoctoral appointment"@en-US ;
@@ -314,9 +287,9 @@ bprofile:credentialFor
         vitro:displayRankAnnot   "41"^^xsd:int ;
         owl:inverseOf            bprofile:hasCredential .
 
-bprofile:postdocSpecialtyOrDepartmentForAppointment
+bprofile:specialtyForPostdocAppointment
         a                              owl:ObjectProperty ;
-        rdfs:domain                    bprofile:PostdocSpecialtyorDepartment ;
+        rdfs:domain                    bprofile:Specialty ;
         rdfs:label                     "specialty for postdoctoral appointment"@en-US ;
         rdfs:range                     bprofile:PostdocAppointment ;
         vitro:displayLimitAnnot        "5"^^xsd:int ;
@@ -328,25 +301,13 @@ bprofile:postdocSpecialtyOrDepartmentForAppointment
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:selectFromExistingAnnot  true ;
-        owl:inverseOf                  bprofile:hasPostdocSpecialtyOrDepartment .
+        owl:inverseOf                  bprofile:postdocAppointmentHasSpecialty .
 
-bprofile:PostdocSpecialtyorDepartment
-        a                        owl:Class ;
-        rdfs:label               "Postdoc Specialty or Department"@en-US ;
-        vitro:displayLimitAnnot  "-1"^^xsd:int ;
-        vitro:displayRankAnnot   "-1"^^xsd:int ;
-        vitro:hiddenFromDisplayBelowRoleLevelAnnot
-                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-        vitro:hiddenFromPublishBelowRoleLevelAnnot
-                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
-        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
-                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
-
-bprofile:hasHospitalAppointmentOrganization
+bprofile:hospitalAppointmentHasHospital
         a                              owl:ObjectProperty ;
         rdfs:domain                    bprofile:HospitalAppointment ;
         rdfs:label                     "hospital"@en-US ;
-        rdfs:range                     bprofile:HospitalAppointmentOrganization ;
+        rdfs:range                     bprofile:Hospital ;
         vitro:displayLimitAnnot        "5"^^xsd:int ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
@@ -355,13 +316,13 @@ bprofile:hasHospitalAppointmentOrganization
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:selectFromExistingAnnot  true ;
-        owl:inverseOf                  bprofile:organizationForHospitalAppointment .
+        owl:inverseOf                  bprofile:hospitalForHospitalAppointment .
 
-bprofile:hasPostdocAppointmentOrganization
+bprofile:postdocAppointmentHasOrganization
         a                              owl:ObjectProperty ;
         rdfs:domain                    bprofile:PostdocAppointment ;
         rdfs:label                     "organization"@en-US ;
-        rdfs:range                     bprofile:PostdocAppointmentOrganization ;
+        rdfs:range                     foaf:Organization ;
         vitro:displayLimitAnnot        "5"^^xsd:int ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
@@ -414,7 +375,6 @@ bprofile:startDate  a  owl:DatatypeProperty ;
 
 bprofile:License  a              owl:Class ;
         rdfs:label               "License"@en-US ;
-        rdfs:subClassOf          bprofile:Credential ;
         vitro:displayLimitAnnot  "-1"^^xsd:int ;
         vitro:displayRankAnnot   "-1"^^xsd:int ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
@@ -430,9 +390,9 @@ bprofile:postdocAppointmentFor
         vitro:displayRankAnnot   "43"^^xsd:int ;
         owl:inverseOf            bprofile:hasPostdocAppointment .
 
-bprofile:CredentialSpecialty
+bprofile:Specialty
         a                        owl:Class ;
-        rdfs:label               "Credential Specialty"@en-US ;
+        rdfs:label               "Specialty"@en-US ;
         vitro:displayLimitAnnot  "-1"^^xsd:int ;
         vitro:displayRankAnnot   "-1"^^xsd:int ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
@@ -444,7 +404,7 @@ bprofile:CredentialSpecialty
 
 bprofile:organizationForPostdocAppointment
         a                              owl:ObjectProperty ;
-        rdfs:domain                    bprofile:PostdocAppointmentOrganization ;
+        rdfs:domain                    foaf:Organization ;
         rdfs:label                     "postdoctoral appointment"@en-US ;
         rdfs:range                     bprofile:PostdocAppointment ;
         vitro:displayLimitAnnot        "5"^^xsd:int ;
@@ -456,11 +416,11 @@ bprofile:organizationForPostdocAppointment
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:selectFromExistingAnnot  true ;
-        owl:inverseOf                  bprofile:hasPostdocAppointmentOrganization .
+        owl:inverseOf                  bprofile:postdocAppointmentHasOrganization .
 
-bprofile:organizationForHospitalAppointment
+bprofile:hospitalForHospitalAppointment
         a                              owl:ObjectProperty ;
-        rdfs:domain                    bprofile:HospitalAppointmentOrganization ;
+        rdfs:domain                    bprofile:Hospital ;
         rdfs:label                     "hospital appointment"@en-US ;
         rdfs:range                     bprofile:HospitalAppointment ;
         vitro:displayLimitAnnot        "5"^^xsd:int ;
@@ -472,4 +432,176 @@ bprofile:organizationForHospitalAppointment
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
         vitro:selectFromExistingAnnot  true ;
-        owl:inverseOf                  bprofile:hasHospitalAppointmentOrganization .
+        owl:inverseOf                  bprofile:hospitalAppointmentHasHospital .
+
+bprofile:organizationForAppointment
+        a                              owl:ObjectProperty ;
+        rdfs:domain                    foaf:Organization ;
+        rdfs:label                     "appointment"@en-US ;
+        rdfs:range                     bprofile:Appointment ;
+        vitro:displayLimitAnnot        "5"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inPropertyGroupAnnot     <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:selectFromExistingAnnot  true ;
+        owl:inverseOf                  bprofile:appointmentHasOrganization .
+
+bprofile:appointmentHasOrganization
+        a                              owl:ObjectProperty ;
+        rdfs:domain                    bprofile:Appointment ;
+        rdfs:label                     "organization"@en-US ;
+        rdfs:range                     bprofile:Organization ;
+        vitro:displayLimitAnnot        "5"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:selectFromExistingAnnot  true ;
+        owl:inverseOf                  bprofile:organizationForAppointment .
+
+bprofile:trainingHasOrganization
+        a                              owl:ObjectProperty ;
+        rdfs:domain                    bprofile:Training ;
+        rdfs:label                     "organization"@en-US ;
+        rdfs:range                     foaf:Organization ;
+        vitro:displayLimitAnnot        "5"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:selectFromExistingAnnot  true ;
+        owl:inverseOf                  bprofile:organizationForTraining .
+
+bprofile:organizationForTraining
+        a                              owl:ObjectProperty ;
+        rdfs:domain                    foaf:Organization ;
+        rdfs:label                     "postdoctoral appointment"@en-US ;
+        rdfs:range                     bprofile:Training ;
+        vitro:displayLimitAnnot        "5"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inPropertyGroupAnnot     <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:selectFromExistingAnnot  true ;
+        owl:inverseOf                  bprofile:trainingHasOrganization .
+
+bprofile:trainingHasSpecialty
+        a                        owl:ObjectProperty ;
+        rdfs:domain              bprofile:Training ;
+        rdfs:label               "specialty"@en-US ;
+        rdfs:range               bprofile:Specialty ;
+        vitro:displayLimitAnnot  "5"^^xsd:int ;
+        owl:inverseOf            bprofile:specialtyForTraining .
+
+bprofile:specialtyForTraining
+        a                              owl:ObjectProperty ;
+        rdfs:domain                    bprofile:Specialty ;
+        rdfs:label                     "specialty for training"@en-US ;
+        rdfs:range                     bprofile:Training ;
+        vitro:displayLimitAnnot        "5"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inPropertyGroupAnnot     <http://vivo.brown.edu/individual/vitroPropertyGroupbiography> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:selectFromExistingAnnot  true ;
+        owl:inverseOf                  bprofile:trainingHasSpecialty .
+
+bprofile:Training
+        a                        owl:Class ;
+        rdfs:label               "Training"@en-US ;
+        vitro:displayLimitAnnot  "-1"^^xsd:int ;
+        vitro:displayRankAnnot   "-1"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bprofile:Appointment
+        a                        owl:Class ;
+        rdfs:label               "Appointment"@en-US ;
+        vitro:displayLimitAnnot  "-1"^^xsd:int ;
+        vitro:displayRankAnnot   "-1"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bprofile:licensorForLicense
+        a                              owl:ObjectProperty ;
+        rdfs:domain                    bprofile:Licensor ;
+        rdfs:label                     "licenses"@en-US ;
+        rdfs:range                     bprofile:License ;
+        vitro:displayLimitAnnot        "5"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inPropertyGroupAnnot     <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:selectFromExistingAnnot  true ;
+        owl:inverseOf                  bprofile:licenseHasLicensor .
+
+bprofile:licenseHasLicensor
+        a                              owl:ObjectProperty ;
+        rdfs:domain                    bprofile:License ;
+        rdfs:label                     "licensed by"@en-US ;
+        rdfs:range                     bprofile:Licensor ;
+        vitro:displayLimitAnnot        "5"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:selectFromExistingAnnot  true ;
+        owl:inverseOf                  bprofile:licensorForLicense .
+
+bprofile:certifierForCertification
+        a                              owl:ObjectProperty ;
+        rdfs:domain                    bprofile:Certifier ;
+        rdfs:label                     "certifications"@en-US ;
+        rdfs:range                     bprofile:Certification ;
+        vitro:displayLimitAnnot        "5"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inPropertyGroupAnnot     <http://vivo.brown.edu/individual/vitroPropertyGroupaffiliation> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:selectFromExistingAnnot  true ;
+        owl:inverseOf                  bprofile:certificationHasCertifier .
+
+bprofile:certificationHasCertifier
+        a                              owl:ObjectProperty ;
+        rdfs:domain                    bprofile:Certification ;
+        rdfs:label                     "certified by"@en-US ;
+        rdfs:range                     bprofile:Certifier ;
+        vitro:displayLimitAnnot        "5"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:selectFromExistingAnnot  true ;
+        owl:inverseOf                  bprofile:certifierForCertification .
