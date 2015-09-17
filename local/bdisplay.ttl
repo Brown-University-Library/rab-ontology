@@ -38,3 +38,13 @@ bdisplay:Schools a owl:Class ;
 bdisplay:OU a owl:Class ;
     rdfs:label "Organizational Unit"@en-US .
 
+bdisplay:Hidden  a               owl:Class ;
+        rdfs:label               "hidden"@en-US ;
+        vitro:displayLimitAnnot  "-1"^^xsd:int ;
+        vitro:displayRankAnnot   "-1"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> .
