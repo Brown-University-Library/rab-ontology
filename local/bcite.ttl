@@ -49,6 +49,11 @@ bcite:authorList a owl:DatatypeProperty ;
     rdfs:domain bcite:Citation ;
     rdfs:range xsd:string .
 
+bcite:editorList a owl:DatatypeProperty ;
+    rdfs:label "editor list"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
 bcite:citedAs a owl:ObjectProperty ;
         rdfs:domain blocal:Work ;
         rdfs:label "contributors"@en-US ;
@@ -91,6 +96,11 @@ bcite:isbn a owl:DatatypeProperty ;
 
 bcite:issn a owl:DatatypeProperty ;
     rdfs:label "issn"@en-US ;
+    rdfs:domain bcite:Citation ;
+    rdfs:range xsd:string .
+
+bcite:book a owl:DatatypeProperty ;
+    rdfs:label "book"@en-US ;
     rdfs:domain bcite:Citation ;
     rdfs:range xsd:string .
 
