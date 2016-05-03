@@ -81,6 +81,11 @@ blocal:orgUnit a owl:DatatypeProperty ;
 blocal:previousImage a owl:ObjectProperty ;
     rdfs:label "previous image"@en-US .
 
+blocal:primaryOrgLabel a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label  "primary OU"@en-US ;
+    rdfs:range  xsd:string .
+
 blocal:profileUpdated a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:label "profile updated"@en-US .
