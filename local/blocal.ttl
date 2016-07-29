@@ -7,6 +7,7 @@
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> .
 
 <http://vivo.brown.edu/ontology/vivo-brown/> a owl:Ontology .
 
@@ -164,3 +165,25 @@ blocal:Delegate a owl:Class ;
 
 blocal:Work a owl:Class ;
         rdfs:label "Work"@en-US .
+
+blocal:pubmedFirstName
+        a           owl:DatatypeProperty ;
+        rdfs:label  "PubMed first name"@en-US ;
+        rdfs:range  xsd:string ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> .
+
+blocal:pubmedLastName
+        a           owl:DatatypeProperty ;
+        rdfs:label  "PubMed last name"@en-US ;
+        rdfs:range  xsd:string ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> .
