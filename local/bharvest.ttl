@@ -14,331 +14,65 @@
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-bharvest:otherTerms  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "other terms"@en-US ;
-        rdfs:range   xsd:string .
+<http://vivo.brown.edu/ontology/harvest>
+        a                          owl:Ontology ;
+        rdfs:label                 "Brown Harvest"@en-US ;
+        vitro:ontologyPrefixAnnot  "bharvest"^^xsd:string .
 
-bharvest:locationID  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "location ID"@en-US ;
-        rdfs:range   xsd:string .
+bharvest:HarvestProcess
+        a           owl:Class ;
+        rdfs:label  "Harvest Process"@en-US .
 
-bharvest:investigator
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "investigator"@en-US ;
-        rdfs:range   xsd:string .
+bharvest:User  a  owl:Class ;
+        rdfs:label  "Harvest User"@en-US .
 
-bharvest:supplementaryConcept
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "supplementary concept"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:modificationDate
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "modification date"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:organization
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "organization"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:filter  a   owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "filter"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:pmid  a     owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "PubMed ID"@en-US ;
-        rdfs:range   xsd:string .
+bharvest:Source  a  owl:Class ;
+        rdfs:label  "Harvest Source"@en-US .
 
 bharvest:PubMedSearch
         a                owl:Class ;
         rdfs:label       "PubMed Search"@en-US ;
         rdfs:subClassOf  bharvest:HarvestProcess .
 
-bharvest:authorIdentifier
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "author identifier"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:subjectPersonalName
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "subject personal name"@en-US ;
-        rdfs:range   xsd:string .
-
 bharvest:WebOfScienceSearch
         a                owl:Class ;
         rdfs:label       "Web of Science Search"@en-US ;
         rdfs:subClassOf  bharvest:HarvestProcess .
 
-bharvest:ecrnNumber  a  owl:DatatypeProperty ;
+bharvest:AcademicAnalyticsUpload
+        a                owl:Class ;
+        rdfs:label       "Academic Analytics Upload"@en-US ;
+        rdfs:subClassOf  bharvest:HarvestProcess .
+
+bharvest:status  a  owl:DatatypeProperty ;
         rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "EC/RN number"@en-US ;
+        rdfs:label   "status"@en-US ;
         rdfs:range   xsd:string .
 
-bharvest:hasHarvestProcess
-        a            owl:ObjectProperty ;
-        rdfs:domain  bharvest:HarvestUser ;
-        rdfs:label   "uses process"@en-US .
-
-bharvest:investigatorFullName
-        a            owl:DatatypeProperty ;
+bharvest:query  a  owl:DatatypeProperty ;
         rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "investigator full name"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:allFields  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "all fields"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:authorFirstName
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "author first name"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:titleAbstract
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "title/abstract"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:affiliation  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "affiliation"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:text  a     owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "text"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:entrezDate  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "entrez date"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:groupAuthor  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "group author"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:book  a     owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "book"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:issue  a    owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "issue"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:title  a    owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "title"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:documentType
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "document type"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:completionDate
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "completion date"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:publication  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "publication"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:meshMajorTopic
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "MeSH major topic"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:publicationDate
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "publication date"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:fundingAgency
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "funding agency"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:HarvestProcess
-        a           owl:Class ;
-        rdfs:label  "Harvest Process"@en-US .
-
-bharvest:authorLastName
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "author last name"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:doi  a      owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "doi"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:pagination  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "pagination"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:year  a     owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "year"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:meshDate  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "MeSH date"@en-US ;
+        rdfs:label   "query"@en-US ;
         rdfs:range   xsd:string .
 
 bharvest:hasUser  a  owl:ObjectProperty ;
         rdfs:domain  bharvest:HarvestProcess ;
+        rdfs:range   bharvest:User ;
         rdfs:label   "has user"@en-US .
 
-bharvest:authorFullName
-        a            owl:DatatypeProperty ;
+bharvest:hasSource
+        a            owl:ObjectProperty ;
         rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "author full name"@en-US ;
-        rdfs:range   xsd:string .
+        rdfs:range   bharvest:Source ;
+        rdfs:label   "has source"@en-US .
 
-bharvest:language  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "language"@en-US ;
-        rdfs:range   xsd:string .
+bharvest:userHasProcess
+        a            owl:ObjectProperty ;
+        rdfs:domain  bharvest:User ;
+        rdfs:range   bharvest:HarvestProcess ;
+        rdfs:label   "user processes"@en-US .
 
-bharvest:grantNumber  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "grant number"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:address  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "address"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:journal  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "journal"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:topic  a    owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "topic"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:meshSubHeading
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "MeSH subheading"@en-US ;
-        rdfs:range   xsd:string .
-
-<http://vivo.brown.edu/ontology/harvest>
-        a                          owl:Ontology ;
-        rdfs:label                 "Brown Harvest"@en-US ;
-        vitro:ontologyPrefixAnnot  "bharvest"^^xsd:string .
-
-bharvest:publisher  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "publisher"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:corporateAuthor
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "corporate author"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:createDate  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "create date"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:accessionNumber
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "accession number"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:author  a   owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "author"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:editor  a   owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "editor"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:isbn  a     owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "ISBN"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:pharmacologicalAction
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "pharmacological action"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:HarvestUser  a  owl:Class ;
-        rdfs:label  "Harvest User"@en-US .
-
-bharvest:meshTerms  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "MeSH terms"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:transliteratedTitle
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "transliterated title"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:type  a     owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "type"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:conference  a  owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "conference"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:publicationType
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "publication type"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:secondarySourceID
-        a            owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "secondary source ID"@en-US ;
-        rdfs:range   xsd:string .
-
-bharvest:volume  a   owl:DatatypeProperty ;
-        rdfs:domain  bharvest:HarvestProcess ;
-        rdfs:label   "volume"@en-US ;
-        rdfs:range   xsd:string .
+bharvest:sourceHasProcess
+        a            owl:ObjectProperty ;
+        rdfs:domain  bharvest:Source ;
+        rdfs:range   bharvest:HarvestProcess ;
+        rdfs:label   "source processes"@en-US .
