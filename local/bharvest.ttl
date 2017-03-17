@@ -54,6 +54,16 @@ bharvest:query  a  owl:DatatypeProperty ;
         rdfs:label   "query"@en-US ;
         rdfs:range   xsd:string .
 
+bharvest:queryParameters  a  owl:DatatypeProperty ;
+        rdfs:domain  bharvest:HarvestProcess ;
+        rdfs:label   "query parameters"@en-US ;
+        rdfs:range   xsd:string .
+
+bharvest:apiQueryParameters  a  owl:DatatypeProperty ;
+        rdfs:domain  bharvest:Source ;
+        rdfs:label   "api parameters"@en-US ;
+        rdfs:range   xsd:string .
+
 bharvest:hasUser  a  owl:ObjectProperty ;
         rdfs:domain  bharvest:HarvestProcess ;
         rdfs:range   bharvest:User ;
