@@ -46,5 +46,6 @@ bdisplay:Hidden  a               owl:Class ;
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
         vitro:hiddenFromPublishBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+        vitro:inClassGroup  <http://vivo.brown.edu/individual/vitroClassGrouppeople> ;
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> .
