@@ -1,47 +1,99 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix bprofile: <http://vivo.brown.edu/ontology/profile#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix afn:   <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix blocal: <http://vivo.brown.edu/ontology/vivo-brown/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bcite: <http://vivo.brown.edu/ontology/citation#> .
+@prefix vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix bdisplay: <http://vivo.brown.edu/ontology/display#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vivo:  <http://vivoweb.org/ontology/core#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://vivo.brown.edu/ontology/display> a owl:Ontology .
+<http://vivo.brown.edu/ontology/display>
+        a                          owl:Ontology ;
+        rdfs:label                 "Brown Display"@en-US ;
+        vitro:ontologyPrefixAnnot  "bdisplay"^^xsd:string .
 
-bdisplay:AlpertSchoolOfMedicine a owl:Class ;
-    rdfs:label "Alpert School of Medicine"@en-US ;
-    rdfs:subClassOf bdisplay:OU .
-
-bdisplay:BiologyAndMedicine a owl:Class ;
-    rdfs:label "Biology and Medicine"@en-US ;
-    rdfs:subClassOf bdisplay:OU .
-
-bdisplay:CentersProgramsAndInstitutes a owl:Class ;
-    rdfs:label "Centers, Programs, and Institutes"@en-US ;
-    rdfs:subClassOf bdisplay:OU .
-
-bdisplay:Departments a owl:Class ;
-    rdfs:label "Academic Departments"@en-US ;
-    rdfs:subClassOf bdisplay:OU .
-
-bdisplay:SchoolOfEngineering a owl:Class ;
-    rdfs:label "School of Engineering"@en-US ;
-    rdfs:subClassOf bdisplay:OU .
-
-bdisplay:SchoolOfPublicHealth a owl:Class ;
-    rdfs:label "School of Public Health"@en-US ;
-    rdfs:subClassOf bdisplay:OU .
-
-bdisplay:Schools a owl:Class ;
-    rdfs:label "Schools"@en-US ;
-    rdfs:subClassOf bdisplay:OU .
-
-bdisplay:OU a owl:Class ;
-    rdfs:label "Organizational Unit"@en-US .
-
-bdisplay:Hidden  a               owl:Class ;
-        rdfs:label               "hidden"@en-US ;
+bdisplay:BrownOrg  a             owl:Class ;
+        rdfs:label               "Brown organizations"@en-US ;
         vitro:displayLimitAnnot  "-1"^^xsd:int ;
         vitro:displayRankAnnot   "-1"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bdisplay:CentersProgramsAndInstitutes
+        a                       owl:Class ;
+        rdfs:label              "Centers, Programs, and Institutes"@en-US ;
+        rdfs:subClassOf         bdisplay:OU ;
+        vitro:displayRankAnnot  "2"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inClassGroup      <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bdisplay:OU  a                   owl:Class ;
+        rdfs:label               "Organizational Unit"@en-US ;
+        vitro:descriptionAnnot   "Org unit at Brown."^^xsd:string ;
+        vitro:displayLimitAnnot  "-1"^^xsd:int ;
+        vitro:displayRankAnnot   "-1"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inClassGroup       <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bdisplay:SchoolOfEngineering
+        a                   owl:Class ;
+        rdfs:label          "School of Engineering"@en-US ;
+        rdfs:subClassOf     bdisplay:OU ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inClassGroup  <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bdisplay:BiologyAndMedicine
+        a                       owl:Class ;
+        rdfs:label              "Biology and Medicine"@en-US ;
+        rdfs:subClassOf         bdisplay:OU ;
+        vitro:displayRankAnnot  "3"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+        vitro:inClassGroup      <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> .
+
+bdisplay:Departments  a         owl:Class ;
+        rdfs:label              "Academic Departments"@en-US ;
+        rdfs:subClassOf         bdisplay:OU ;
+        vitro:displayRankAnnot  "1"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inClassGroup      <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bdisplay:Schools  a             owl:Class ;
+        rdfs:label              "Schools"@en-US ;
+        rdfs:subClassOf         bdisplay:OU ;
+        vitro:displayRankAnnot  "4"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inClassGroup      <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bdisplay:Hidden  a          owl:Class ;
+        rdfs:label          "hidden"@en-US ;
         vitro:hiddenFromDisplayBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
         vitro:hiddenFromPublishBelowRoleLevelAnnot
@@ -49,3 +101,23 @@ bdisplay:Hidden  a               owl:Class ;
         vitro:inClassGroup  <http://vivo.brown.edu/individual/vitroClassGrouppeople> ;
         vitro:prohibitedFromUpdateBelowRoleLevelAnnot
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> .
+
+bdisplay:AlpertSchoolOfMedicine
+        a                   owl:Class ;
+        rdfs:label          "Alpert School of Medicine"@en-US ;
+        rdfs:subClassOf     bdisplay:OU ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
+        vitro:inClassGroup  <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bdisplay:SchoolOfPublicHealth
+        a                   owl:Class ;
+        rdfs:label          "School of Public Health"@en-US ;
+        rdfs:subClassOf     bdisplay:OU ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:inClassGroup  <http://vivo.brown.edu/individual/vitroClassGroupBrownOUs> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
