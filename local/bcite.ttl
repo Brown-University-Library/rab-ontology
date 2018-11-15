@@ -533,6 +533,17 @@ bcite:conferenceFor  a  owl:ObjectProperty ;
         rdfs:range     bcite:Citation ;
         owl:inverseOf  bcite:hasConference .
 
+bcite:NoID  a                    owl:Class ;
+        rdfs:label               "no identifier"@en-US ;
+        vitro:displayLimitAnnot  "-1"^^xsd:int ;
+        vitro:displayRankAnnot   "-1"^^xsd:int ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
 bcite:Book  a               owl:Class ;
         rdfs:label          "Book"@en-US ;
         rdfs:subClassOf     bcite:Citation ;
