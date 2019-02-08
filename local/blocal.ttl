@@ -89,6 +89,16 @@ blocal:previousImage  a                owl:ObjectProperty ;
                 <http://vitro.mannlib.cornell.edu/ns/vitro/role#dbAdmin> ;
         vitro:selectFromExistingAnnot  true .
 
+blocal:alphaName  a  owl:DatatypeProperty ;
+        rdfs:label  "alphabetical name"@en-US ;
+        rdfs:range  xsd:string ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
 blocal:affiliations  a              owl:FunctionalProperty , owl:DatatypeProperty ;
         rdfs:label                  "affiliations"@en-US ;
         rdfs:range                  xsd:string ;
