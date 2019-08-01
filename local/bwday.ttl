@@ -1,0 +1,42 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix bprofile: <http://vivo.brown.edu/ontology/profile#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix afn:   <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix blocal: <http://vivo.brown.edu/ontology/vivo-brown/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bcite: <http://vivo.brown.edu/ontology/citation#> .
+@prefix vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bdisplay: <http://vivo.brown.edu/ontology/display#> .
+@prefix bwday: <http://vivo.brown.edu/ontology/workday#> .
+@prefix vivo:  <http://vivoweb.org/ontology/core#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+bwday:appointmentRank
+        a           owl:DatatypeProperty ;
+        rdfs:label  "appointment rank"@en-US ;
+        rdfs:range  xsd:string ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+bwday:appointmentTitle
+        a           owl:DatatypeProperty ;
+        rdfs:label  "appointment title"@en-US ;
+        rdfs:range  xsd:string ;
+        vitro:hiddenFromDisplayBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:hiddenFromPublishBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+        vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+                <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+<http://vivo.brown.edu/ontology/workday>
+        a                          owl:Ontology ;
+        rdfs:label                 "Brown Workday"@en-US ;
+        vitro:ontologyPrefixAnnot  "bwday"^^xsd:string .
